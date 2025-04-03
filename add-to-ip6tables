@@ -1,3 +1,4 @@
+#-A INPUT -m iprange --src-range 2a01:1::-2a01:7:ffff:ffff:ffff:ffff:ffff:ffff -j DROP
 -A INPUT -m iprange --src-range 240b:4000::-240b:4005:ffff:ffff:ffff:ffff:ffff:ffff -j DROP
 -A INPUT -m iprange --src-range 240b:400b::-240b:400f:ffff:ffff:ffff:ffff:ffff:ffff -j DROP
 -A INPUT -s 2001:1470::/32 -j DROP
@@ -14,6 +15,7 @@
 -A INPUT -s 2001:550::/32 -j DROP
 -A INPUT -s 2001:678::/32 -j DROP
 -A INPUT -s 2001:67c:0100::/40 -j DROP
+-A INPUT -s 2001:67c:6ec::/40 -j DROP
 -A INPUT -s 2001:730::/29 -j DROP
 -A INPUT -s 2001:8d8::/32 -j DROP
 -A INPUT -s 2001:978:1b04::/47 -j DROP
@@ -63,6 +65,7 @@
 -A INPUT -s 2600::/28 -j DROP
 -A INPUT -s 2600::/29 -j DROP
 -A INPUT -s 2600:1f14::/32 -j DROP
+-A INPUT -s 2600:1f18::/35 -j DROP
 -A INPUT -s 2600:3c02::/32 -j DROP
 -A INPUT -s 2602:2b7::/36 -j DROP
 -A INPUT -s 2602:807:4000::/44 -j DROP
