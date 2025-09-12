@@ -1,5 +1,9 @@
+#Une exception
+-A INPUT -s 2a02:598::/32 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
+
 -A INPUT -s 2001::/32 -j DROP
 -A INPUT -s 2001:1:c00::/24 -j DROP
+-A INPUT -s 2001:1098::/32 -j DROP
 -A INPUT -s 2001:1248::/32 -j DROP
 -A INPUT -s 2001:1458::/31 -j DROP
 -A INPUT -s 2001:1470::/32 -j DROP
@@ -19,17 +23,19 @@
 -A INPUT -s 2001:1bb0::/32 -j DROP
 -A INPUT -s 2001:250::/32 -j DROP
 -A INPUT -s 2001:4050::/32 -j DROP
--A INPUT -s 2001:410::/32 -j DROP
-#Tor FR OVH
+#Tor EE ??
+-A INPUT -s 2001:400::/26 -j DROP
+-A INPUT -s 2001:4178::/29 -j DROP
+#Tor FR OVH+Onyphe
 -A INPUT -s 2001:41d0::/32 -j DROP
 -A INPUT -s 2001:4450::/32 -j DROP
 -A INPUT -s 2001:4454::/30 -j DROP
 -A INPUT -s 2001:448a::/31 -j DROP
 #OVH
--A INPUT -s 2001:41d0::/32 -j DROP
 -A INPUT -s 2001:448a::/31 -j DROP
 -A INPUT -s 2001:470::/32 -j DROP
 -A INPUT -s 2001:4860::/32 -j DROP
+-A INPUT -s 2001:4958::/32 -j DROP
 -A INPUT -s 2001:49e8::/32 -j DROP
 -A INPUT -s 2001:49f0::/32 -j DROP
 #Tor FR Gandi
@@ -39,47 +45,71 @@
 -A INPUT -s 2001:4ca0::/32 -j DROP
 -A INPUT -s 2001:550::/32 -j DROP
 -A INPUT -s 2001:558::/29 -j DROP
+-A INPUT -s 2001:56b8:a000::/35 -j DROP
 -A INPUT -s 2001:578::/30 -j DROP
 -A INPUT -s 2001:5b0::/32 -j DROP
+-A INPUT -s 2001:608::/32 -j DROP
+-A INPUT -s 2001:620::/29 -j DROP
 -A INPUT -s 2001:638::/32 -j DROP
+#Milkywan+
 -A INPUT -s 2001:678::/32 -j DROP
 -A INPUT -s 2001:67c:100::/40 -j DROP
+-A INPUT -s 2001:67c:10d8::/48 -j DROP
+-A INPUT -s 2001:67c:1354::/48 -j DROP
+-A INPUT -s 2001:67c:1680::/48 -j DROP
 -A INPUT -s 2001:67c:2044::/48 -j DROP
 -A INPUT -s 2001:67c:2070::/48 -j DROP
-#Tor FR
+#Tor FR+Tetaneutral
 -A INPUT -s 2001:67c:2608::/48 -j DROP
 -A INPUT -s 2001:67c:2660::/48 -j DROP
 #Octopuce
 -A INPUT -s 2001:67c:288::/48 -j DROP
+-A INPUT -s 2001:67c:289c::/48 -j DROP
+#Milkywan
+-A INPUT -s 2001:67c:2944::/48 -j DROP
 -A INPUT -s 2001:67c:6d4::/48 -j DROP
 -A INPUT -s 2001:67c:6ec::/40 -j DROP
 -A INPUT -s 2001:67c:750::/48 -j DROP
 -A INPUT -s 2001:67c:89c::/48 -j DROP
+#Milkywan
+-A INPUT -s 2001:67c:a64::/48 -j DROP
+-A INPUT -s 2001:67c:d54::/48 -j DROP
+-A INPUT -s 2001:67c:d7c::/48 -j DROP
+-A INPUT -s 2001:67c:e04::/48 -j DROP
 -A INPUT -s 2001:67c:e28::/48 -j DROP
 -A INPUT -s 2001:67c:e60::/48 -j DROP
 -A INPUT -s 2001:67c:e94::/48 -j DROP
 -A INPUT -s 2001:67c:2f5c::/48 -j DROP
 -A INPUT -s 2001:67c:c6ec::/48 -j DROP
 -A INPUT -s 2001:67c:e98::/48 -j DROP
+#Milkywan
+-A INPUT -s 2001:67c:f44::/48 -j DROP
 -A INPUT -s 2001:718::/29 -j DROP
 -A INPUT -s 2001:730::/29 -j DROP
 -A INPUT -s 2001:760::/32 -j DROP
 -A INPUT -s 2001:7b8::/29 -j DROP
+#Tor EE
+-A INPUT -s 2001:7d0::/32 -j DROP
 -A INPUT -s 2001:818::/32 -j DROP
 -A INPUT -s 2001:858::/32 -j DROP
+-A INPUT -s 2001:861:3e02:9810::/60 -j DROP
 -A INPUT -s 2001:861:8b41:f300::/60 -j DROP
 -A INPUT -s 2001:861:8d40:6850::/60 -j DROP
+#Tor PT
 -A INPUT -s 2001:8a0::/32 -j DROP
 -A INPUT -s 2001:8d8::/32 -j DROP
 -A INPUT -s 2001:8f8::/32 -j DROP
 #Gitoyen
 -A INPUT -s 2001:908::/29 -j DROP
-#Gitoyen
+#Gitoyen/Neutrinet
 -A INPUT -s 2001:910::/29 -j DROP
+#Baionet
+-A INPUT -s 2001:913:5000::/36 -j DROP
 -A INPUT -s 2001:978::/32 -j DROP
 -A INPUT -s 2001:9e8::/32 -j DROP
 -A INPUT -s 2001:a60::/29 -j DROP
 -A INPUT -s 2001:ac8::/32  -j DROP
+#Tor TW
 -A INPUT -s 2001:b000::/21 -j DROP
 -A INPUT -s 2001:ba0::/32 -j DROP
 #Tor FR Scaleway
@@ -92,11 +122,14 @@
 -A INPUT -s 2001:df0:bd80::/48 -j DROP
 -A INPUT -s 2001:df1:6e80::/48 -j DROP
 -A INPUT -s 2001:df1:cbc0::/48 -j DROP
+-A INPUT -s 2001:df3:7c80::/48 -j DROP
 -A INPUT -s 2001:df2:b780::/48 -j DROP
 -A INPUT -s 2001:df5:2640::/48 -j DROP
 -A INPUT -s 2001:df7:5300::/48 -j DROP
+-A INPUT -s 2001:df7:6000::/48 -j DROP
 -A INPUT -s 2001:df7:7400::/48 -j DROP
 -A INPUT -s 2001:df7:7880::/48 -j DROP
+-A INPUT -s 2001:df7:ce00::/48 -j DROP
 -A INPUT -s 2001:ee0::/32 -j DROP
 -A INPUT -s 2001:fb1::/32 -j DROP
 -A INPUT -s 2001:fd8::/32 -j DROP
@@ -107,6 +140,7 @@
 -A INPUT -s 2400:7a00::/32 -j DROP
 -A INPUT -s 2400:8500::/32 -j DROP
 -A INPUT -s 2400:858::/32 -j DROP
+-A INPUT -s 2400:87c0::/32 -j DROP
 -A INPUT -s 2400:8901::/32 -j DROP
 -A INPUT -s 2400:8904::/32 -j DROP
 -A INPUT -s 2400:adc0::/27 -j DROP
@@ -116,11 +150,16 @@
 -A INPUT -s 2400:d860::/32 -j DROP
 -A INPUT -s 2401:2500::/32 -j DROP
 -A INPUT -s 2401:4900::/32 -j DROP
+-A INPUT -s 2401:59a0::/32 -j DROP
+#Tor VN
+-A INPUT -s 2401:5b60::/32 -j DROP
 -A INPUT -s 2401:5ec0::/32 -j DROP
 -A INPUT -s 2401:72e0::/32 -j DROP
 -A INPUT -s 2401:72e2::/32 -j DROP
 -A INPUT -s 2401:7500::/32 -j DROP
 -A INPUT -s 2401:b180::/32 -j DROP
+-A INPUT -s 2401:b60::/32 -j DROP
+-A INPUT -s 2401:ba80::/32 -j DROP
 -A INPUT -s 2401:c080::/32 -j DROP
 -A INPUT -s 2401:fff0::/28 -j DROP
 #Tor FR OVH
@@ -131,6 +170,8 @@
 -A INPUT -s 2402:800::/32 -j DROP
 -A INPUT -s 2402:8c80::/32 -j DROP
 -A INPUT -s 2402:d0c0::/32 -j DROP
+-A INPUT -s 2402:dac0::/32 -j DROP
+-A INPUT -s 2402:e280::/32 -j DROP
 -A INPUT -s 2404:2280::/32 -j DROP
 -A INPUT -s 2404:8c80::/32 -j DROP
 -A INPUT -s 2404:d000::/32 -j DROP
@@ -139,13 +180,16 @@
 -A INPUT -s 2405:2840::/48 -j DROP
 -A INPUT -s 2405:6580::/29 -j DROP
 -A INPUT -s 2405:6e00::/32 -j DROP
+-A INPUT -s 2405:acc0::/32 -j DROP
 -A INPUT -s 2406:30c0::/48 -j DROP
 -A INPUT -s 2406:5900::/36 -j DROP
+-A INPUT -s 2406:7400::/29 -j DROP
 -A INPUT -s 2406:da10::/28 -j DROP
 -A INPUT -s 2407:1100::/32 -j DROP
 -A INPUT -s 2407:1c00::/32 -j DROP
 -A INPUT -s 2407:3640::/31 -j DROP
 -A INPUT -s 2407:6ac0::/32 -j DROP
+-A INPUT -s 2407:aa80::/32 -j DROP
 -A INPUT -s 2408:4000::/22 -j DROP
 -A INPUT -s 2408:8000::/20 -j DROP
 -A INPUT -s 2408:8240::/32 -j DROP
@@ -155,6 +199,8 @@
 -A INPUT -s 240b:c000::/24 -j DROP
 -A INPUT -s 240d::/27 -j DROP
 -A INPUT -s 240e::/20 -j DROP
+-A INPUT -s 240e:200::/23 -j DROP
+-A INPUT -s 2600::/28 -j DROP
 -A INPUT -s 2600:1010::/29 -j DROP
 -A INPUT -s 2600:1700::/28 -j DROP
 #2600:1901:0 utilisÃ© par le thÃ¨me Extime
@@ -166,20 +212,24 @@
 -A INPUT -s 2600:3c04::/22 -j DROP
 -A INPUT -s 2600:4000::/24 -j DROP
 -A INPUT -s 2600:4800::/24 -j DROP
+-A INPUT -s 2600:6c00::/24 -j DROP
 -A INPUT -s 2600:7000::/24 -j DROP
 -A INPUT -s 2600:8800::/28 -j DROP
 -A INPUT -s 2600:9000::/28 -j DROP
--A INPUT -s 2600::/28 -j DROP
+-A INPUT -s 2600:c00::/28 -j DROP
+-A INPUT -s 2600:fafe::/40 -j DROP
 -A INPUT -s 2601::/20 -j DROP
+-A INPUT -s 2602::/24 -j DROP
 -A INPUT -s 2602:2b7::/36 -j DROP
 -A INPUT -s 2602:807:4000::/44 -j DROP
--A INPUT -s 2602:810:4003::/48  -j DROP
 -A INPUT -s 2602:80d:1000::/44 -j DROP
--A INPUT -s 2602::/24 -j DROP
+-A INPUT -s 2602:810:4003::/48 -j DROP
+-A INPUT -s 2602:80d:1000::/44 -j DROP
 -A INPUT -s 2602:f992::/40 -j DROP
 -A INPUT -s 2602:fa26::/40 -j DROP
 -A INPUT -s 2602:fa2d::/36 -j DROP
 -A INPUT -s 2602:fa59:3::/48 -j DROP
+-A INPUT -s 2602:fa59:4::/48 -j DROP
 -A INPUT -s 2602:fa59:9::/48 -j DROP
 -A INPUT -s 2602:fa59:10::/48 -j DROP
 -A INPUT -s 2602:fb54::/48 -j DROP
@@ -199,8 +249,10 @@
 -A INPUT -s 2602:fed2::/32 -j DROP
 -A INPUT -s 2602:ff06:725::/48 -j DROP
 -A INPUT -s 2602:ff0c::/36 -j DROP
+-A INPUT -s 2602:ff16:1::/48 -j DROP
 -A INPUT -s 2602:ff16:13::/48 -j DROP
 -A INPUT -s 2602:ff16:5::/48 -j DROP
+-A INPUT -s 2602:ff16:6::/48 -j DROP
 -A INPUT -s 2602:ff23:50::/48 -j DROP
 -A INPUT -s 2602:ffb6::/36 -j DROP
 -A INPUT -s 2602:ffe4::/38 -j DROP
@@ -209,8 +261,6 @@
 -A INPUT -s 2604:2dc0::/32 -j DROP
 -A INPUT -s 2604:3d00::/28 -j DROP
 -A INPUT -s 2604:4500:9::/48 -j DROP
-#Tor FR OVH
--A INPUT -s 2607:5300::/32 -j DROP
 -A INPUT -s 2604:7c00::/32 -j DROP
 -A INPUT -s 2604:9780::/32 -j DROP
 -A INPUT -s 2604:a00::/32 -j DROP
@@ -222,6 +272,8 @@
 -A INPUT -s 2605:4c0::/32 -j DROP
 -A INPUT -s 2605:59c0:100::/40 -j DROP
 -A INPUT -s 2605:6400:10::/48 -j DROP
+-A INPUT -s 2605:6400:20::/48 -j DROP
+-A INPUT -s 2605:6400:30::/48 -j DROP
 -A INPUT -s 2605:6900::/32 -j DROP
 -A INPUT -s 2605:6f00::/32 -j DROP
 -A INPUT -s 2605:7980::/48 -j DROP
@@ -230,6 +282,8 @@
 -A INPUT -s 2605:a680::/32 -j DROP
 -A INPUT -s 2605:aa80::/32 -j DROP
 -A INPUT -s 2605:e740::/32 -j DROP
+-A INPUT -s 2606:2c40::/32 -j DROP
+-A INPUT -s 2606:36c0::/32 -j DROP
 -A INPUT -s 2606:4700::/36 -j DROP
 -A INPUT -s 2606:4700:3030::/44 -j DROP
 -A INPUT -s 2606:4700:4400::/48 -j DROP
@@ -240,13 +294,16 @@
 -A INPUT -s 2606:8940::/32 -j DROP
 -A INPUT -s 2606:9580:400::/40 -j DROP
 -A INPUT -s 2607:1b00:93b2::/48 -j DROP
--A INPUT -s 2607:5a80::/32 -j DROP
+-A INPUT -s 2607:4240::/32 -j DROP
+#Tor FR OVH
 -A INPUT -s 2607:5300::/32 -j DROP
 -A INPUT -s 2607:5500::/32 -j DROP
+-A INPUT -s 2607:5600::/32 -j DROP
+-A INPUT -s 2607:5a80::/32 -j DROP
 -A INPUT -s 2607:6002:100::/40  -j DROP
 -A INPUT -s 2607:6002:200::/40  -j DROP
 -A INPUT -s 2607:6003:2303::/48 -j DROP
--A INPUT -s 2607:6bc0::/48 -j DROP
+-A INPUT -s 2607:6bc0::/32 -j DROP
 -A INPUT -s 2607:8500::/32 -j DROP
 -A INPUT -s 2607:b500:1::/48 -j DROP
 -A INPUT -s 2607:b500:400::/39 -j DROP
@@ -257,8 +314,10 @@
 -A INPUT -s 2607:f1c0::/32 -j DROP
 -A INPUT -s 2607:f298:5::/48 -j DROP
 -A INPUT -s 2607:f298:6::/48 -j DROP
+-A INPUT -s 2607:f530::/32 -j DROP
 -A INPUT -s 2607:f710::/32 -j DROP
--A INPUT -s 2607:fb90:7500::/40 -j DROP
+-A INPUT -s 2607:fb58::/32 -j DROP
+-A INPUT -s 2607:fb90::/28 -j DROP
 -A INPUT -s 2607:fe80:1000::/36  -j DROP
 -A INPUT -s 2607:fea8::/32  -j DROP
 -A INPUT -s 2607:feb8::/32  -j DROP
@@ -273,10 +332,13 @@
 -A INPUT -s 2607:ff10::/32  -j DROP
 -A INPUT -s 2620:0:50c0::/48 -j DROP
 -A INPUT -s 2620:0:9c0::/48 -j DROP
+-A INPUT -s 2620:101:4000::/42 -j DROP
 -A INPUT -s 2620:127:f00f::/48 -j DROP
 -A INPUT -s 2620:128:e008::/48 -j DROP
 -A INPUT -s 2620:131:c000::/44 -j DROP
 -A INPUT -s 2620:17b::/36 -j DROP
+-A INPUT -s 2620:18c::/36 -j DROP
+-A INPUT -s 2620:1b:e000::/48 -j DROP
 -A INPUT -s 2620:1ec::/36 -j DROP
 -A INPUT -s 2620:8:4300::/48 -j DROP
 -A INPUT -s 2620:96::/32 -j DROP
@@ -287,52 +349,91 @@
 -A INPUT -s 2602:fb54::/32 -j DROP
 -A INPUT -s 2605:a141::/32 -j DROP
 -A INPUT -s 2800:200::/32 -j DROP
+-A INPUT -s 2800:300::/32 -j DROP
 -A INPUT -s 2800:3e0::/32 -j DROP
+-A INPUT -s 2800:480::/29 -j DROP
 -A INPUT -s 2800:6C0::/32 -j DROP
+-A INPUT -s 2800:bf0::/32 -j DROP
+-A INPUT -s 2800:cd0::/32 -j DROP
+-A INPUT -s 2802:8010::/32 -j DROP
+-A INPUT -s 2803:2540::/32 -j DROP
 -A INPUT -s 2803:2800::/32 -j DROP
+-A INPUT -s 2803:2a00::/32 -j DROP
 -A INPUT -s 2803:3b80::/32 -j DROP
+-A INPUT -s 2803:8960::/32 -j DROP
 -A INPUT -s 2803:9800::/32 -j DROP
 -A INPUT -s 2803:a200::/32 -j DROP
 -A INPUT -s 2804:10::/32 -j DROP
 -A INPUT -s 2804:1b2::/31 -j DROP
 -A INPUT -s 2804:14c::/31 -j DROP
+-A INPUT -s 2804:1e68::/32 -j DROP
+-A INPUT -s 2804:214::/32 -j DROP
+-A INPUT -s 2804:248::/32 -j DROP
 -A INPUT -s 2804:29b8::/32 -j DROP
 -A INPUT -s 2804:30c::/32 -j DROP
+-A INPUT -s 2804:3ed8::/32 -j DROP
+#Tor BR
+-A INPUT -s 2804:4310::/32 -j DROP
+-A INPUT -s 2804:4800::/32 -j DROP
+-A INPUT -s 2804:4f34::/32 -j DROP
 -A INPUT -s 2804:5330::/32 -j DROP
+#Tor BR
+-A INPUT -s 2804:538::/32 -j DROP
 -A INPUT -s 2804:56c::/32 -j DROP
 -A INPUT -s 2804:5dac::/32 -j DROP
+-A INPUT -s 2804:5f64::/32 -j DROP
+-A INPUT -s 2804:62e4::/32 -j DROP
+-A INPUT -s 2804:7f0::/29 -j DROP
 -A INPUT -s 2804:8::/30 -j DROP
+-A INPUT -s 2804:82cc::/32 -j DROP
+-A INPUT -s 2804:868::/32 -j DROP
+-A INPUT -s 2804:8d4::/32 -j DROP
 -A INPUT -s 2804:ac8::/32 -j DROP
 -A INPUT -s 2804:b44::/32 -j DROP
 -A INPUT -s 2804:b54::/32 -j DROP
 -A INPUT -s 2804:d40::/28 -j DROP
+-A INPUT -s 2804:d50::/28 -j DROP
 -A INPUT -s 2804:ddc::/32 -j DROP
+#Tor MX
 -A INPUT -s 2806:1000::/24 -j DROP
 -A INPUT -s 2806:2a0::/32 -j DROP
 -A INPUT -s 2806:2f0::/32 -j DROP
 -A INPUT -s 2806:342::/32 -j DROP
+-A INPUT -s 2806:3dc::/32 -j DROP
 -A INPUT -s 2a00:1018::/32 -j DROP
+-A INPUT -s 2a00:1098::/32 -j DROP
 -A INPUT -s 2a00:1168::/29 -j DROP
+-A INPUT -s 2a00:1370::/32 -j DROP
 #APIS Google 2a00:1450:4007:800::/40
 #-A INPUT -s 2a00:1450::/29 -j DROP
+# Attaque Port 25
+-A INPUT -s 2a00:1450:4864:20::/64 -j DROP
 -A INPUT -s 2a00:1478::/32 -j DROP
 -A INPUT -s 2a00:15f8::/32 -j DROP
 -A INPUT -s 2a00:1678::/32 -j DROP
+-A INPUT -s 2a00:16b0::/32 -j DROP
 -A INPUT -s 2a00:1828::/32 -j DROP
+-A INPUT -s 2a00:1838::/32 -j DROP
 #Tor FR
 -A INPUT -s 2a00:1b88::/32 -j DROP
 -A INPUT -s 2a00:1ca8::/32 -j DROP
 -A INPUT -s 2a00:1c98::/32 -j DROP
+-A INPUT -s 2a00:1d30::/32 -j DROP
 -A INPUT -s 2a00:1ed0::/32 -j DROP
 -A INPUT -s 2a00:2380::/25 -j DROP
 -A INPUT -s 2a00:4800::/29 -j DROP
 -A INPUT -s 2a00:4d80::/32 -j DROP
+#grifon
+-A INPUT -s 2a00:5880::/29 -j DROP
+-A INPUT -s 2a00:5da0::/29 -j DROP
+-A INPUT -s 2a00:63c0::/29 -j DROP
 #Octopuce
 -A INPUT -s 2a00:6a40::/32 -j DROP
 -A INPUT -s 2a00:7a60::/32 -j DROP
 -A INPUT -s 2a00:7c80::/32 -j DROP
 #Tor FR Octopuce
 -A INPUT -s 2a00:99a0::/33 -j DROP
+-A INPUT -s 2a00:afe0:0::/48 -j DROP
 -A INPUT -s 2a00:b6e0:1::/48 -j DROP
 -A INPUT -s 2a00:b700::/29 -j DROP
 #Tor FR Ikoula
@@ -346,9 +447,13 @@
 -A INPUT -s 2a00:f940::/32 -j DROP
 -A INPUT -s 2a00:7ee0:9:3::/64 -j DROP
 -A INPUT -s 2a00:9b60::/32 -j DROP
+-A INPUT -s 2a00:f2a0::/32 -j DROP
 -A INPUT -s 2a00:f60::/32 -j DROP
 -A INPUT -s 2a00:f940::/32 -j DROP
 -A INPUT -s 2a01:110::/31 -j DROP
+#Tor EE
+-A INPUT -s 2a01:1b8::/32 -j DROP
+-A INPUT -s 2a01:230::/32 -j DROP
 -A INPUT -s 2a01:238::/29 -j DROP
 -A INPUT -s 2a01:28::/32 -j DROP
 -A INPUT -s 2a01:2a8::/29 -j DROP
@@ -357,16 +462,17 @@
 -A INPUT -s 2a01:488::/32 -j DROP
 -A INPUT -s 2a01:4ce0::/32 -j DROP
 -A INPUT -s 2a01:4f8::/29 -j DROP
+-A INPUT -s 2a01:6340::/29 -j DROP
 -A INPUT -s 2a01:7a7::/32 -j DROP
 -A INPUT -s 2a01:7c8::/32 -j DROP
--A INPUT -s 2a01:7e01::/32 -j DROP
--A INPUT -s 2a01:7e02::/32 -j DROP
+-A INPUT -s 2a01:7e00::/29 -j DROP
 -A INPUT -s 2a01:8740::/32 -j DROP
 -A INPUT -s 2a01:96e0::/32 -j DROP
 -A INPUT -s 2a01:9ce0::/32 -j DROP
 -A INPUT -s 2a01:ab20::/32 -j DROP
 -A INPUT -s 2a01:aee0::/32 -j DROP
 -A INPUT -s 2a01:cb06:805b:5e00::/56 -j DROP
+-A INPUT -s 2a01:cb08:64b:4200::/56 -j DROP
 -A INPUT -s 2a01:cb08:835f:6a00::/56 -j DROP
 -A INPUT -s 2a01:cb11:8e:8100::/56 -j DROP
 -A INPUT -s 2a01:cb14:18a4:1500::/56 -j DROP
@@ -389,30 +495,41 @@
 #Tor FR Scaleway
 -A INPUT -s 2a01:e11:7000::/36 -j DROP
 -A INPUT -s 2a01:e280::/29 -j DROP
+-A INPUT -s 2a01:e34:ec06:87d0::/60 -j DROP
 -A INPUT -s 2a01:e940::/29 -j DROP
+-A INPUT -s 2a01:ecc0::/29 -j DROP
+-A INPUT -s 2a02:1628::/32 -j DROP
 -A INPUT -s 2a02:1778::/32 -j DROP
+#Tor BE
+-A INPUT -s 2a02:1800::/24 -j DROP
 -A INPUT -s 2a02:2148::/29 -j DROP
 -A INPUT -s 2a02:2350::/32 -j DROP
+-A INPUT -s 2a02:2410::/32 -j DROP
 -A INPUT -s 2a02:2478::/29 -j DROP
 -A INPUT -s 2a02:26f0::/29 -j DROP
 -A INPUT -s 2a02:2770::/32 -j DROP
 -A INPUT -s 2a02:2788::/32 -j DROP
 -A INPUT -s 2a02:2b88::/32 -j DROP
 -A INPUT -s 2a02:3000::/23 -j DROP
+-A INPUT -s 2a02:408::/32 -j DROP
+-A INPUT -s 2a02:418::/29 -j DROP
 -A INPUT -s 2a02:4780::/32 -j DROP
 -A INPUT -s 2a02:5740::/29 -j DROP
 -A INPUT -s 2a02:6b60::/28 -j DROP
 -A INPUT -s 2a02:6ea0::/32 -j DROP
 -A INPUT -s 2a02:750::/29 -j DROP
+-A INPUT -s 2a02:7b40::/29 -j DROP
 -A INPUT -s 2a02:8078::/29 -j DROP
 -A INPUT -s 2a02:8080::/29 -j DROP
 -A INPUT -s 2a02:80e0::/30 -j DROP
+-A INPUT -s 2a02:8100::/27 -j DROP
 -A INPUT -s 2a02:8428:662:b201::/64 -j DROP
 -A INPUT -s 2a02:8429:2c3d:8f01::/64 -j DROP
 -A INPUT -s 2a02:858::/29 -j DROP
 -A INPUT -s 2a02:898::/32 -j DROP
 -A INPUT -s 2a02:908::/32 -j DROP
 -A INPUT -s 2a02:9b0::/32 -j DROP
+-A INPUT -s 2a02:a000::/26 -j DROP
 -A INPUT -s 2a02:a03f::/32 -j DROP
 -A INPUT -s 2a02:a300::/27 -j DROP
 -A INPUT -s 2a02:a400::/25 -j DROP
@@ -420,46 +537,67 @@
 -A INPUT -s 2a02:bf8::/32 -j DROP
 -A INPUT -s 2a02:c200::/29 -j DROP
 -A INPUT -s 2a02:c6a0::/30 -j DROP
+-A INPUT -s 2a02:c78::/29 -j DROP
 #Tor FR
 -A INPUT -s 2a02:ec0:200::/40 -j DROP
 -A INPUT -s 2a02:f180::/29 -j DROP
 -A INPUT -s 2a02:ff0::/29 -j DROP
+-A INPUT -s 2a03:1b20::/29 -j DROP
 -A INPUT -s 2a03:2880::/32 -j DROP
 -A INPUT -s 2a03:2a00::/29 -j DROP
 -A INPUT -s 2a03:3a60::/29 -j DROP
 -A INPUT -s 2a03:4000::/32 -j DROP
 #Tor RU
 -A INPUT -s 2a03:6f00::/29 -j DROP
+#Tetatneutral
+-A INPUT -s 2a03:7220::/29 -j DROP
 #Tor FR
 -A INPUT -s 2a03:75c0::/32 -j DROP
+#Tor LU
+-A INPUT -s 2a03:90c0::/32 -j DROP
 -A INPUT -s 2a03:9380::/29 -j DROP
 -A INPUT -s 2a03:94e0::/29 -j DROP
 -A INPUT -s 2a03:b0c0::/32 -j DROP
 -A INPUT -s 2a03:b780::/32 -j DROP
 -A INPUT -s 2a03:cfc0::/32 -j DROP
 -A INPUT -s 2a03:db40::/32 -j DROP
+#Tor AT+
+-A INPUT -s 2a03:e600::/29 -j DROP
+#Tor AT+
 -A INPUT -s 2a03:f80::/29 -j DROP
+-A INPUT -s 2a03:f480::/32 -j DROP
 -A INPUT -s 2a04:180::/29 -j DROP
+-A INPUT -s 2a04:2180::/29 -j DROP
 -A INPUT -s 2a04:2410::/28 -j DROP
 -A INPUT -s 2a04:2e00::/29 -j DROP
 -A INPUT -s 2a04:3740:2:0:185:26:107::/112 -j DROP
+-A INPUT -s 2a04:4e40::/29 -j DROP
 -A INPUT -s 2a04:5200::/32 -j DROP
+-A INPUT -s 2a04:52c0::/29 -j DROP
 #Gitoyen
 -A INPUT -s 2a04:9ac0::/29 -j DROP
+#Tor RO
 -A INPUT -s 2a04:9dc0::/29 -j DROP
+#Tor RS
+-A INPUT -s 2a04:b540::/29 -j DROP
 -A INPUT -s 2a04:c40::/29 -j DROP
 -A INPUT -s 2a04:e8c0::/29 -j DROP
 -A INPUT -s 2a04:ecc0::/29 -j DROP
 -A INPUT -s 2a05:1500::/29 -j DROP
+-A INPUT -s 2a05:2700::/29 -j DROP
 -A INPUT -s 2a05:540::/29 -j DROP
 -A INPUT -s 2a05:7640::/29 -j DROP
 -A INPUT -s 2a05:91c0::/29 -j DROP
+-A INPUT -s 2a05:b0c0::/29 -j DROP
 -A INPUT -s 2a05:b100::/29 -j DROP
 -A INPUT -s 2a05:cd01::/32 -j DROP
 -A INPUT -s 2a05:d000::/25 -j DROP
 -A INPUT -s 2a05:dfc0::/29 -j DROP
+-A INPUT -s 2a05:f480::/29 -j DROP
 -A INPUT -s 2a06:1280::/29 -j DROP
+-A INPUT -s 2a06:1700::/29 -j DROP
 -A INPUT -s 2a06:41c0::/29 -j DROP
+-A INPUT -s 2a06:4880::/29 -j DROP
 -A INPUT -s 2a06:4882::/31 -j DROP
 -A INPUT -s 2a06:63c0::/29 -j DROP
 -A INPUT -s 2a06:6440::/29 -j DROP
@@ -468,6 +606,8 @@
 -A INPUT -s 2a06:98c0::/29 -j DROP
 -A INPUT -s 2a06:be80::/29 -j DROP
 -A INPUT -s 2a06:cd40::/29 -j DROP
+-A INPUT -s 2a06:d380::/29 -j DROP
+-A INPUT -s 2a06:e80::/29 -j DROP
 #Tor FR
 -A INPUT -s 2a06:e881:7000::/44 -j DROP
 -A INPUT -s 2a06:f980::/29 -j DROP
@@ -476,21 +616,28 @@
 -A INPUT -s 2a07:7880::/29 -j DROP
 -A INPUT -s 2a07:85c0::/29 -j DROP
 -A INPUT -s 2a07:a900::/29 -j DROP
+-A INPUT -s 2a07:b940::/29 -j DROP
 -A INPUT -s 2a07:da80::/29 -j DROP
+-A INPUT -s 2a07:e040::/29 -j DROP
 -A INPUT -s 2a09:54c0::/29 -j DROP
--A INPUT -s 2a07:54c0::/29 -j DROP
 -A INPUT -s 2a09:6383:0:9::/64 -j DROP
 #Tor FR
 -A INPUT -s 2a09:6384::/32 -j DROP
 -A INPUT -s 2a07:a340::/29 -j DROP
--A INPUT -s 2a09:bac1::/32 -j DROP
+-A INPUT -s 2a09:bac0::/29 -j DROP
+-A INPUT -s 2a09:f040::/29 -j DROP
+#Tor AT
+-A INPUT -s 2a09:f900::/29 -j DROP
 -A INPUT -s 2a09:ff00::/29 -j DROP
 -A INPUT -s 2a0a:280::/29 -j DROP
+-A INPUT -s 2a0a:2b40::/29 -j DROP
 -A INPUT -s 2a0a:39c0::/29 -j DROP
 -A INPUT -s 2a0a:4cc0::/32 -j DROP
 -A INPUT -s 2a0a:b640::/29 -j DROP
 -A INPUT -s 2a0a:ef40::/29 -j DROP
 -A INPUT -s 2a0a:7d80::/29 -j DROP
+-A INPUT -s 2a0b:21c0::/29 -j DROP
+-A INPUT -s 2a0b:2fc0::/29 -j DROP
 -A INPUT -s 2a0b:4143::/32 -j DROP
 -A INPUT -s 2a0b:64c0::/29 -j DROP
 -A INPUT -s 2a0b:7280::/29 -j DROP
@@ -500,13 +647,20 @@
 -A INPUT -s 2a0b:cbc0::/32 -j DROP
 -A INPUT -s 2a0b:f4c0::/29 -j DROP
 -A INPUT -s 2a0b:fb00::/29 -j DROP
+-A INPUT -s 2a0c:4ac0::/29 -j DROP
 -A INPUT -s 2a0c:5080::/29 -j DROP
+-A INPUT -s 2a0c:5700::/29 -j DROP
+-A INPUT -s 2a0c:5840::/29 -j DROP
 -A INPUT -s 2a0c:5980::/29 -j DROP
 -A INPUT -s 2a0c:5a80::/29 -j DROP
+-A INPUT -s 2a0c:6a40::/29 -j DROP
 -A INPUT -s 2a0c:7280::/29 -j DROP
 -A INPUT -s 2a0c:7980::/29 -j DROP
 -A INPUT -s 2a0c:9e00::/29 -j DROP
--A INPUT -s 2a0c:b640::/29 -j DROP
+#Zkillu
+#-A INPUT -s 2a0c:b640::/29 -j DROP
+#Internet Wireless System SARL
+-A INPUT -s 2a0c:cb00::/32 -j DROP
 -A INPUT -s 2a0c:d600::/29 -j DROP
 #Tor FR
 -A INPUT -s 2a0c:e300::/29 -j DROP
@@ -516,9 +670,13 @@
 -A INPUT -s 2a0d:2580::/29 -j DROP
 -A INPUT -s 2a0d:3340::/29 -j DROP
 -A INPUT -s 2a0d:5600::/29 -j DROP
+-A INPUT -s 2a0d:6c0::/29 -j DROP
 -A INPUT -s 2a0d:6fc0::/29 -j DROP
 -A INPUT -s 2a0d:7980::/32 -j DROP
+-A INPUT -s 2a0d:7c40::/29 -j DROP
 -A INPUT -s 2a0d:7f00::/29 -j DROP
+#Tor RO
+-A INPUT -s 2a0d:8140::/29 -j DROP
 -A INPUT -s 2a0d:8480::/29 -j DROP
 -A INPUT -s 2a0d:b901::/32 -j DROP
 -A INPUT -s 2a0d:bbc0::/29 -j DROP
@@ -527,35 +685,54 @@
 -A INPUT -s 2a0e:4000::/29 -j DROP
 -A INPUT -s 2a0e:7700::/29 -j DROP
 -A INPUT -s 2a0e:78c0::/29 -j DROP
+#Tor RO
+-A INPUT -s 2a0e:8f00::/29 -j DROP
 -A INPUT -s 2a0e:97c0::/29 -j DROP
 -A INPUT -s 2a0e:a940::/29 -j DROP
 -A INPUT -s 2a0e:b100::/29 -j DROP
+#Tor HR+
 -A INPUT -s 2a0e:bfc0::/29 -j DROP
+#grenode
+-A INPUT -s 2a0e:c400::/29 -j DROP
+-A INPUT -s 2a0e:c9c0::/29 -j DROP
 -A INPUT -s 2a0e:d600::/29 -j DROP
 #Tor FR Milkywan
--A INPUT -s 2a0e:e700::/31 -j DROP
+-A INPUT -s 2a0e:e700::/29 -j DROP
 -A INPUT -s 2a0e:fa00::/29 -j DROP
+-A INPUT -s 2a0e:fd40::/29 -j DROP
 -A INPUT -s 2a0f:3b80::/29 -j DROP
 -A INPUT -s 2a0f:5140::/29 -j DROP
 -A INPUT -s 2a0f:5940::/29 -j DROP
 #Gitoyen
 -A INPUT -s 2a0f:6780::/29 -j DROP
+#Tor RO
+-A INPUT -s 2a0f:85c0::/29 -j DROP
 -A INPUT -s 2a0f:9400::/29 -j DROP
 -A INPUT -s 2a0f:a8c0::/29 -j DROP
 -A INPUT -s 2a0f:ca80::/29 -j DROP
 -A INPUT -s 2a0f:cac0::/29 -j DROP
+-A INPUT -s 2a0f:df00::/29 -j DROP
 #Gitoyen
 -A INPUT -s 2a0f:e580::/29 -j DROP
 -A INPUT -s 2a0f:ffc0::/29 -j DROP
 -A INPUT -s 2a10:17c0::/29 -j DROP
+#Tor EE
 -A INPUT -s 2a10:1fc0::/29 -j DROP
 -A INPUT -s 2a10:42c0::/29 -j DROP
--A INPUT -s 2a10:4646:411:0:be24::/64 -j DROP
+#Zkillu - Dyjix
+-A INPUT -s 2a10:4640::/29 -j DROP
+-A INPUT -s 2a10:4646:120::/48 -j DROP
+-A INPUT -s 2a10:4c40::/29 -j DROP
 -A INPUT -s 2a10:7180::/29 -j DROP
 -A INPUT -s 2a10:7d40::/29 -j DROP
 #Tor FR
 -A INPUT -s 2a10:8a40::/29 -j DROP
+#grenode
+-A INPUT -s 2a10:a080::/29 -j DROP
 -A INPUT -s 2a10:a700::/29 -j DROP
+-A INPUT -s 2a10:c800::/29 -j DROP
+#Tor EE
+-A INPUT -s 2a10:c940::/29 -j DROP
 -A INPUT -s 2a10:cc40::/29 -j DROP
 -A INPUT -s 2a10:f300::/29 -j DROP
 -A INPUT -s 2a11:e980::/29 -j DROP
@@ -566,14 +743,21 @@
 -A INPUT -s 2a12:a800::/29 -j DROP
 -A INPUT -s 2a12:b3c0::/29 -j DROP
 -A INPUT -s 2a12:bec0::/29 -j DROP
+-A INPUT -s 2a12:d280::/29 -j DROP
 -A INPUT -s 2a12:dd40::/29 -j DROP
 -A INPUT -s 2a13:4ac0::/29 -j DROP
+-A INPUT -s 2a13:8d80::/40 -j DROP
 -A INPUT -s 2a13:aac0::/29 -j DROP
+-A INPUT -s 2a13:adc0::/29 -j DROP
 -A INPUT -s 2a13:b900::/29 -j DROP
 -A INPUT -s 2a13:c280::/32 -j DROP
+-A INPUT -s 2a13:cc80::/29 -j DROP
 #Tor RU
 -A INPUT -s 2a13:d200::/29 -j DROP
+-A INPUT -s 2a13:d280::/29 -j DROP
 -A INPUT -s 2a14:1e00::/29 -j DROP
+#Onyphe
+-A INPUT -s 2a14:f100::/29 -j DROP
 -A INPUT -s 2c0f:2a80::/32 -j DROP
 -A INPUT -s 2c0f:e9a0::/32 -j DROP
 -A INPUT -s 2c0f:f528::/32 -j DROP
