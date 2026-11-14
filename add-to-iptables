@@ -57,7 +57,6 @@
 #-A INPUT -s 13.60.0.0/15 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
 -A INPUT -s 157.55.39.0/24 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
 #-A INPUT -s 16.144.0.0/16 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
--A INPUT -s 213.180.203.0/24 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
 #-A INPUT -s 217.113.194.0/24 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
 #-A INPUT -s 52.179.0.0/16 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
 -A INPUT -s 54.36.148.0/23 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
@@ -82,7 +81,7 @@
 -A INPUT -s 108.174.0.0/20 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
 -A INPUT -s 103.114.148.0/22 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
 -A INPUT -s 103.20.92.0/22 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
--A INPUT -s 108.174.0.0/16 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
+#-A INPUT -s 108.174.0.0/16 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
 -A INPUT -s 144.2.0.0/16 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
 
 #FacebookExternalHit/WhatsApp
@@ -239,7 +238,9 @@
 -A INPUT -s 185.16.252.0/24 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
 -A INPUT -s 188.154.0.0/16 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
 -A INPUT -s 195.165.0.0/16 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
--A INPUT -s 84.226.0.0/16 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
+
+#What10bot
+-A INPUT -s 84.226.246.0/24 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
 
 #Qwantbot
 -A INPUT -s 194.187.171.0/24 -p tcp -m state --state NEW -m tcp -m multiport --dports 80,443 -j ACCEPT
@@ -418,6 +419,10 @@
 -A INPUT -m iprange --src-range 109.111.0.0-109.111.53.255 -j DROP
 -A INPUT -m iprange --src-range 109.111.56.0-109.111.255.255 -j DROP
 -A INPUT -m iprange --src-range 109.112.0.0-109.119.255.255 -j DROP
+-A INPUT -m iprange --src-range 109.122.0.0-109.122.31.255 -j DROP
+-A INPUT -m iprange --src-range 109.122.40.0-109.122.57.255 -j DROP
+-A INPUT -m iprange --src-range 109.122.59.0-109.122.127.255 -j DROP
+-A INPUT -m iprange --src-range 109.122.192.0-109.122.255.255 -j DROP
 -A INPUT -m iprange --src-range 109.128.0.0-109.162.255.255 -j DROP
 -A INPUT -m iprange --src-range 109.163.0.0-109.163.199.255 -j DROP
 -A INPUT -m iprange --src-range 109.163.208.0-109.163.255.255 -j DROP
@@ -431,7 +436,7 @@
 -A INPUT -m iprange --src-range 109.199.0.0-109.199.255.255 -j DROP
 -A INPUT -m iprange --src-range 109.203.0.0-109.203.63.255 -j DROP
 -A INPUT -m iprange --src-range 109.203.96.0-109.203.223.255 -j DROP
--A INPUT -m iprange --src-range 109.205.9.0-109.205.63.255 -j DROP
+-A INPUT -m iprange --src-range 109.205.8.0-109.205.63.255 -j DROP
 -A INPUT -m iprange --src-range 109.205.72.0-109.205.255.255 -j DROP
 -A INPUT -m iprange --src-range 109.206.0.0-109.206.227.255 -j DROP
 -A INPUT -m iprange --src-range 109.206.232.0-109.206.255.255 -j DROP
@@ -441,6 +446,8 @@
 -A INPUT -m iprange --src-range 109.232.200.0-109.232.255.255 -j DROP
 -A INPUT -m iprange --src-range 109.234.8.0-109.234.72.255 -j DROP
 -A INPUT -m iprange --src-range 109.234.74.0-109.234.255.255 -j DROP
+-A INPUT -m iprange --src-range 109.235.0.0-109.235.79.255 -j DROP
+-A INPUT -m iprange --src-range 109.235.88.0-109.235.255.255 -j DROP
 -A INPUT -m iprange --src-range 109.236.0.0-109.236.194.255 -j DROP
 -A INPUT -m iprange --src-range 109.236.196.0-109.236.199.255 -j DROP
 -A INPUT -m iprange --src-range 109.236.202.0-109.236.203.255 -j DROP
@@ -531,11 +538,16 @@
 -A INPUT -m iprange --src-range 138.232.0.0-138.255.255.255 -j DROP
 -A INPUT -m iprange --src-range 139.0.0.0-139.25.255.255 -j DROP
 -A INPUT -m iprange --src-range 139.28.0.0-139.28.67.255 -j DROP
--A INPUT -m iprange --src-range 139.28.72.0-139.28.98.255 -j DROP
--A INPUT -m iprange --src-range 139.28.100.0-139.28.247.255 -j DROP
+-A INPUT -m iprange --src-range 139.28.72.0-139.28.247.255 -j DROP
 -A INPUT -m iprange --src-range 139.28.252.0-139.28.255.255 -j DROP
 -A INPUT -m iprange --src-range 139.29.0.0-139.53.255.255 -j DROP
 -A INPUT -m iprange --src-range 139.55.0.0-139.99.255.255 -j DROP
+-A INPUT -m iprange --src-range 139.100.0.0-139.100.1.255 -j DROP
+-A INPUT -m iprange --src-range 139.100.16.0-139.100.19.255 -j DROP
+-A INPUT -m iprange --src-range 139.100.26.0-139.100.27.255 -j DROP
+-A INPUT -m iprange --src-range 139.100.32.0-139.100.97.255 -j DROP
+-A INPUT -m iprange --src-range 139.100.99.0-139.100.175.255 -j DROP
+-A INPUT -m iprange --src-range 139.100.192.0-139.100.255.255 -j DROP
 -A INPUT -m iprange --src-range 139.101.0.0-139.123.255.255 -j DROP
 -A INPUT -m iprange --src-range 139.125.0.0-139.157.255.255 -j DROP
 -A INPUT -m iprange --src-range 139.159.0.0-139.255.255.255 -j DROP
@@ -556,6 +568,8 @@
 -A INPUT -m iprange --src-range 141.105.142.0-141.105.255.255 -j DROP
 -A INPUT -m iprange --src-range 141.106.0.0-141.114.255.255 -j DROP
 -A INPUT -m iprange --src-range 141.116.0.0-141.169.255.255 -j DROP
+-A INPUT -m iprange --src-range 141.170.0.0-141.170.215.255 -j DROP
+-A INPUT -m iprange --src-range 141.170.224.0-141.170.255.255 -j DROP
 -A INPUT -m iprange --src-range 141.171.0.0-141.174.255.255 -j DROP
 -A INPUT -m iprange --src-range 141.176.0.0-141.192.255.255 -j DROP
 -A INPUT -m iprange --src-range 141.193.0.0-141.193.31.255 -j DROP
@@ -569,6 +583,7 @@
 -A INPUT -m iprange --src-range 141.227.188.0-141.227.190.255 -j DROP
 -A INPUT -m iprange --src-range 141.228.0.0-141.254.255.255 -j DROP
 -A INPUT -m iprange --src-range 141.255.0.0-141.255.127.255 -j DROP
+-A INPUT -m iprange --src-range 141.255.136.0-141.255.151.255 -j DROP
 -A INPUT -m iprange --src-range 141.255.160.0-141.255.255.255 -j DROP
 -A INPUT -m iprange --src-range 141.11.0.0-141.11.4.255 -j DROP
 -A INPUT -m iprange --src-range 141.11.6.0-141.11.39.255 -j DROP
@@ -676,7 +691,7 @@
 -A INPUT -m iprange --src-range 149.3.164.0-149.3.255.255 -j DROP
 -A INPUT -m iprange --src-range 149.62.0.0-149.62.151.255 -j DROP
 -A INPUT -m iprange --src-range 149.62.160.0-149.62.255.255 -j DROP
--A INPUT -m iprange --src-range 15.0.0.0-15.223.255.255 -j DROP
+-A INPUT -m iprange --src-range 15.0.0.0-15.224.255.255 -j DROP
 -A INPUT -m iprange --src-range 15.226.0.0-15.229.255.255 -j DROP
 -A INPUT -m iprange --src-range 15.230.0.0-15.230.70.255 -j DROP
 -A INPUT -m iprange --src-range 15.230.72.0-15.230.81.255 -j DROP
@@ -780,8 +795,7 @@
 -A INPUT -m iprange --src-range 158.247.60.0-158.247.255.255 -j DROP
 -A INPUT -m iprange --src-range 158.248.0.0-158.254.255.255 -j DROP
 -A INPUT -m iprange --src-range 158.255.0.0-158.255.63.255 -j DROP
--A INPUT -m iprange --src-range 158.255.72.0-158.255.95.255 -j DROP
--A INPUT -m iprange --src-range 158.255.128.0-158.255.255.255 -j DROP
+-A INPUT -m iprange --src-range 158.255.72.0-158.255.255.255 -j DROP
 -A INPUT -m iprange --src-range 159.0.0.0-159.19.255.255 -j DROP
 -A INPUT -m iprange --src-range 159.22.0.0-159.30.255.255 -j DROP
 -A INPUT -m iprange --src-range 159.32.0.0-159.49.255.255 -j DROP
@@ -807,6 +821,10 @@
 -A INPUT -m iprange --src-range 161.4.0.0-161.47.255.255 -j DROP
 -A INPUT -m iprange --src-range 161.49.0.0-161.68.255.255 -j DROP
 -A INPUT -m iprange --src-range 161.70.0.0-161.103.255.255 -j DROP
+-A INPUT -m iprange --src-range 161.104.0.0-161.104.7.255 -j DROP
+-A INPUT -m iprange --src-range 161.104.16.0-161.104.79.255 -j DROP
+-A INPUT -m iprange --src-range 161.104.88.0-161.104.159.255 -j DROP
+-A INPUT -m iprange --src-range 161.104.176.0-161.104.255.255 -j DROP
 -A INPUT -m iprange --src-range 161.107.0.0-161.255.255.255 -j DROP
 -A INPUT -m iprange --src-range 161.69.0.0-161.69.21.255 -j DROP
 -A INPUT -m iprange --src-range 161.69.23.0-161.69.107.255 -j DROP
@@ -841,6 +859,7 @@
 -A INPUT -m iprange --src-range 163.174.0.0-163.255.255.255 -j DROP
 -A INPUT -m iprange --src-range 164.138.0.0-164.138.55.255 -j DROP
 -A INPUT -m iprange --src-range 164.138.64.0-164.138.239.255 -j DROP
+-A INPUT -m iprange --src-range 164.138.247.0-164.138.246.255 -j DROP
 -A INPUT -m iprange --src-range 164.138.248.0-164.138.255.255 -j DROP
 -A INPUT -m iprange --src-range 164.215.0.0-164.215.101.255 -j DROP
 -A INPUT -m iprange --src-range 164.215.103.0-164.215.255.255 -j DROP
@@ -894,6 +913,8 @@
 -A INPUT -m iprange --src-range 176.124.0.0-176.124.114.255 -j DROP
 -A INPUT -m iprange --src-range 176.124.116.0-176.124.255.255 -j DROP
 -A INPUT -m iprange --src-range 176.128.0.0-176.128.11.255 -j DROP
+-A INPUT -m iprange --src-range 176.222.0.0-176.222.207.255 -j DROP
+-A INPUT -m iprange --src-range 176.222.216.0-176.222.255.255 -j DROP
 -A INPUT -m iprange --src-range 176.223.0.0-176.223.175.255 -j DROP
 -A INPUT -m iprange --src-range 176.223.180.0-176.223.255.255 -j DROP
 -A INPUT -m iprange --src-range 176.227.0.0-176.227.130.255 -j DROP
@@ -931,9 +952,12 @@
 -A INPUT -m iprange --src-range 178.18.0.0-178.18.47.255 -j DROP
 -A INPUT -m iprange --src-range 178.18.64.0-178.18.175.255 -j DROP
 -A INPUT -m iprange --src-range 178.18.192.0-178.18.255.255 -j DROP
+-A INPUT -m iprange --src-range 178.19.16.0-178.19.127.255 -j DROP
+-A INPUT -m iprange --src-range 178.19.144.0-178.19.255.255 -j DROP
 -A INPUT -m iprange --src-range 178.20.0.0-178.20.63.255 -j DROP
 -A INPUT -m iprange --src-range 178.20.72.0-178.20.240.255 -j DROP
 -A INPUT -m iprange --src-range 178.20.248.0-178.20.255.255 -j DROP
+-A INPUT -m iprange --src-range 178.208.32.0-178.208.255.255 -j DROP
 -A INPUT -m iprange --src-range 178.21.0.0-178.21.175.255 -j DROP
 -A INPUT -m iprange --src-range 178.21.184.0-178.21.207.255 -j DROP
 -A INPUT -m iprange --src-range 178.21.209.0-178.21.210.255 -j DROP
@@ -967,8 +991,6 @@
 -A INPUT -m iprange --src-range 178.238.8.0-178.238.255.255 -j DROP
 -A INPUT -m iprange --src-range 178.239.0.0-178.239.113.255 -j DROP
 -A INPUT -m iprange --src-range 178.239.115.0-178.239.255.255 -j DROP
--A INPUT -m iprange --src-range 178.241.0.0-178.241.119.255 -j DROP
--A INPUT -m iprange --src-range 178.241.128.0-178.241.247.255 -j DROP
 -A INPUT -m iprange --src-range 178.248.0.0-178.248.191.255 -j DROP
 -A INPUT -m iprange --src-range 178.248.200.0-178.248.207.255 -j DROP
 -A INPUT -m iprange --src-range 178.248.217.0-178.248.255.255 -j DROP
@@ -1065,8 +1087,7 @@
 -A INPUT -m iprange --src-range 185.11.217.0-185.11.255.255 -j DROP
 -A INPUT -m iprange --src-range 185.110.0.0-185.110.83.255 -j DROP
 -A INPUT -m iprange --src-range 185.110.88.0-185.110.95.255 -j DROP
--A INPUT -m iprange --src-range 185.110.100.0-185.110.191.255 -j DROP
--A INPUT -m iprange --src-range 185.110.196.0-185.110.255.255 -j DROP
+-A INPUT -m iprange --src-range 185.110.100.0-185.110.255.255 -j DROP
 -A INPUT -m iprange --src-range 185.111.0.0-185.111.15.255 -j DROP
 -A INPUT -m iprange --src-range 185.111.20.0-185.111.43.255 -j DROP
 -A INPUT -m iprange --src-range 185.111.48.0-185.111.51.255 -j DROP
@@ -1257,6 +1278,9 @@
 -A INPUT -m iprange --src-range 185.151.184.0-185.151.187.255 -j DROP
 -A INPUT -m iprange --src-range 185.151.192.0-185.151.211.255 -j DROP
 -A INPUT -m iprange --src-range 185.151.216.0-185.151.255.255 -j DROP
+-A INPUT -m iprange --src-range 185.152.0.0-185.152.23.255 -j DROP
+-A INPUT -m iprange --src-range 185.152.28.0-185.152.51.255 -j DROP
+-A INPUT -m iprange --src-range 185.152.56.0-185.152.255.255 -j DROP
 -A INPUT -m iprange --src-range 185.153.0.0-185.153.7.255 -j DROP
 -A INPUT -m iprange --src-range 185.153.12.0-185.153.27.255 -j DROP
 -A INPUT -m iprange --src-range 185.153.32.0-185.153.95.255 -j DROP
@@ -1306,6 +1330,12 @@
 -A INPUT -m iprange --src-range 185.163.216.0-185.163.219.255 -j DROP
 -A INPUT -m iprange --src-range 185.163.224.0-185.163.227.255 -j DROP
 -A INPUT -m iprange --src-range 185.163.232.0-185.163.255.255 -j DROP
+-A INPUT -m iprange --src-range 185.164.0.0-185.164.52.255 -j DROP
+-A INPUT -m iprange --src-range 185.164.54.0-185.164.123.255 -j DROP
+-A INPUT -m iprange --src-range 185.164.128.0-185.164.163.255 -j DROP
+-A INPUT -m iprange --src-range 185.164.168.0-185.164.211.255 -j DROP
+-A INPUT -m iprange --src-range 185.164.216.0-185.164.231.255 -j DROP
+-A INPUT -m iprange --src-range 185.164.236.0-185.164.255.255 -j DROP
 -A INPUT -m iprange --src-range 185.165.0.0-185.165.63.255 -j DROP
 -A INPUT -m iprange --src-range 185.165.68.0-185.165.143.255 -j DROP
 -A INPUT -m iprange --src-range 185.165.148.0-185.165.192.255 -j DROP
@@ -2267,8 +2297,7 @@
 -A INPUT -m iprange --src-range 192.108.120.0-192.108.255.255 -j DROP
 -A INPUT -m iprange --src-range 192.109.0.0-192.109.139.255 -j DROP
 -A INPUT -m iprange --src-range 192.109.143.0-192.109.147.255 -j DROP
--A INPUT -m iprange --src-range 192.109.149.0-192.109.237.255 -j DROP
--A INPUT -m iprange --src-range 192.109.239.0-192.109.255.255 -j DROP
+-A INPUT -m iprange --src-range 192.109.149.0-192.109.255.255 -j DROP
 -A INPUT -m iprange --src-range 192.12.0.0-192.12.95.255 -j DROP
 -A INPUT -m iprange --src-range 192.12.97.0-192.12.255.255 -j DROP
 -A INPUT -m iprange --src-range 192.124.0.0-192.124.169.255 -j DROP
@@ -2385,6 +2414,8 @@
 -A INPUT -m iprange --src-range 193.110.153.0-193.110.255.255 -j DROP
 -A INPUT -m iprange --src-range 193.111.0.0-193.111.13.255 -j DROP
 -A INPUT -m iprange --src-range 193.111.16.0-193.111.255.255 -j DROP
+-A INPUT -m iprange --src-range 193.134.0.0-193.134.211.255 -j DROP
+-A INPUT -m iprange --src-range 193.134.216.0-193.134.255.255 -j DROP
 -A INPUT -m iprange --src-range 193.135.0.0-193.135.123.255 -j DROP
 -A INPUT -m iprange --src-range 193.135.126.0-193.135.255.255 -j DROP
 -A INPUT -m iprange --src-range 193.138.0.0-193.138.63.255 -j DROP
@@ -2403,11 +2434,16 @@
 -A INPUT -m iprange --src-range 193.148.84.0-193.148.255.255 -j DROP
 -A INPUT -m iprange --src-range 193.149.0.0-193.149.95.255 -j DROP
 -A INPUT -m iprange --src-range 193.149.128.0-193.149.255.255 -j DROP
+-A INPUT -m iprange --src-range 193.150.0.0-193.150.88.255 -j DROP
+-A INPUT -m iprange --src-range 193.150.90.0-193.150.168.255 -j DROP
+-A INPUT -m iprange --src-range 193.150.170.0-193.150.255.255 -j DROP
 -A INPUT -m iprange --src-range 193.151.0.0-193.151.83.255 -j DROP
 -A INPUT -m iprange --src-range 193.151.88.0-193.151.255.255 -j DROP
 -A INPUT -m iprange --src-range 193.160.0.0-193.160.129.255 -j DROP
 -A INPUT -m iprange --src-range 193.160.132.0-193.160.255.255 -j DROP
 -A INPUT -m iprange --src-range 193.161.0.0-193.161.253.255 -j DROP
+-A INPUT -m iprange --src-range 193.162.0.0-193.162.28.255 -j DROP
+-A INPUT -m iprange --src-range 193.162.30.0-193.162.255.255 -j DROP
 -A INPUT -m iprange --src-range 193.163.0.0-193.163.33.255 -j DROP
 -A INPUT -m iprange --src-range 193.163.35.0-193.163.89.255 -j DROP
 -A INPUT -m iprange --src-range 193.163.91.0-193.163.98.255 -j DROP
@@ -2445,6 +2481,13 @@
 -A INPUT -m iprange --src-range 193.177.0.0-193.177.161.255 -j DROP
 -A INPUT -m iprange --src-range 193.177.163.0-193.177.181.255 -j DROP
 -A INPUT -m iprange --src-range 193.177.183.0-193.177.255.255 -j DROP
+-A INPUT -m iprange --src-range 193.178.1.0-193.178.135.255 -j DROP
+-A INPUT -m iprange --src-range 193.178.137.0-193.178.137.255 -j DROP
+-A INPUT -m iprange --src-range 193.178.139.0-193.178.139.255 -j DROP
+-A INPUT -m iprange --src-range 193.178.141.0-193.178.153.255 -j DROP
+-A INPUT -m iprange --src-range 193.178.156.0-193.178.190.255 -j DROP
+-A INPUT -m iprange --src-range 193.178.192.0-193.178.210.255 -j DROP
+-A INPUT -m iprange --src-range 193.178.212.0-193.178.255.255 -j DROP
 -A INPUT -m iprange --src-range 193.186.0.0-193.186.7.255 -j DROP
 -A INPUT -m iprange --src-range 193.186.9.0-193.186.191.255 -j DROP
 -A INPUT -m iprange --src-range 193.186.196.0-193.186.255.255 -j DROP
@@ -2504,6 +2547,8 @@
 -A INPUT -m iprange --src-range 193.218.0.0-193.218.81.255 -j DROP
 -A INPUT -m iprange --src-range 193.218.84.0-193.218.119.255 -j DROP
 -A INPUT -m iprange --src-range 193.218.121.0-193.218.255.255 -j DROP
+-A INPUT -m iprange --src-range 193.219.0.0-193.219.6.255 -j DROP
+-A INPUT -m iprange --src-range 193.219.8.0-193.219.255.255 -j DROP
 -A INPUT -m iprange --src-range 193.22.0.0-193.22.6.255 -j DROP
 -A INPUT -m iprange --src-range 193.22.8.0-193.22.13.255 -j DROP
 -A INPUT -m iprange --src-range 193.22.16.0-193.22.91.255 -j DROP
@@ -2512,6 +2557,11 @@
 -A INPUT -m iprange --src-range 193.22.131.0-193.22.142.255 -j DROP
 -A INPUT -m iprange --src-range 193.22.144.0-193.22.223.255 -j DROP
 -A INPUT -m iprange --src-range 193.22.228.0-193.22.255.255 -j DROP
+-A INPUT -m iprange --src-range 193.220.0.0-193.220.87.255 -j DROP
+-A INPUT -m iprange --src-range 193.220.220.0-193.220.122.255 -j DROP
+-A INPUT -m iprange --src-range 193.220.124.0-193.220.125.255 -j DROP
+-A INPUT -m iprange --src-range 193.220.128.0-193.220.144.255 -j DROP
+-A INPUT -m iprange --src-range 193.220.148.0-193.220.255.255 -j DROP
 -A INPUT -m iprange --src-range 193.221.0.0-193.221.95.255 -j DROP
 -A INPUT -m iprange --src-range 193.221.102.0-193.221.102.255 -j DROP
 -A INPUT -m iprange --src-range 193.221.109.0-193.221.116.255 -j DROP
@@ -2528,8 +2578,7 @@
 -A INPUT -m iprange --src-range 193.227.108.0-193.227.129.255 -j DROP
 -A INPUT -m iprange --src-range 193.227.131.0-193.227.135.255 -j DROP
 -A INPUT -m iprange --src-range 193.227.144.0-193.227.227.255 -j DROP
--A INPUT -m iprange --src-range 193.227.230.0-193.227.247.255 -j DROP
--A INPUT -m iprange --src-range 193.227.250.0-193.227.255.255 -j DROP
+-A INPUT -m iprange --src-range 193.227.230.0-193.227.255.255 -j DROP
 -A INPUT -m iprange --src-range 193.228.0.0-193.228.137.255 -j DROP
 -A INPUT -m iprange --src-range 193.228.139.0-193.228.143.255 -j DROP
 -A INPUT -m iprange --src-range 193.228.145.0-193.228.146.255 -j DROP
@@ -2555,6 +2604,10 @@
 -A INPUT -m iprange --src-range 193.239.124.0-193.239.197.255 -j DROP
 -A INPUT -m iprange --src-range 193.239.200.0-193.239.239.255 -j DROP
 -A INPUT -m iprange --src-range 193.239.242.0-193.239.255.255 -j DROP
+-A INPUT -m iprange --src-range 193.243.0.0-193.243.146.255 -j DROP
+-A INPUT -m iprange --src-range 193.243.148.0-193.243.148.255 -j DROP
+-A INPUT -m iprange --src-range 193.243.152.0-193.243.184.255 -j DROP
+-A INPUT -m iprange --src-range 193.243.186.0-193.243.255.255 -j DROP
 -A INPUT -m iprange --src-range 193.246.0.0-193.246.164.255 -j DROP
 -A INPUT -m iprange --src-range 193.246.166.0-193.246.255.255 -j DROP
 -A INPUT -m iprange --src-range 193.247.0.0-193.247.199.255 -j DROP
@@ -2565,6 +2618,10 @@
 -A INPUT -m iprange --src-range 193.25.196.0-193.25.196.255 -j DROP
 -A INPUT -m iprange --src-range 193.25.199.0-193.25.199.255 -j DROP
 -A INPUT -m iprange --src-range 193.25.201.0-193.25.255.255 -j DROP
+-A INPUT -m iprange --src-range 193.251.153.0-193.251.153.255 -j DROP
+-A INPUT -m iprange --src-range 193.251.170.0-193.251.170.255 -j DROP
+-A INPUT -m iprange --src-range 193.251.218.0-193.251.219.255 -j DROP
+-A INPUT -m iprange --src-range 193.251.222.0-193.251.223.255 -j DROP
 -A INPUT -m iprange --src-range 193.26.0.0-193.26.10.255 -j DROP
 -A INPUT -m iprange --src-range 193.26.12.0-193.26.13.255 -j DROP
 -A INPUT -m iprange --src-range 193.26.15.0-193.26.20.255 -j DROP
@@ -2750,6 +2807,13 @@
 -A INPUT -m iprange --src-range 194.124.0.0-194.124.63.255 -j DROP
 -A INPUT -m iprange --src-range 194.124.68.0-194.124.191.255 -j DROP
 -A INPUT -m iprange --src-range 194.124.196.0-194.124.255.255 -j DROP
+-A INPUT -m iprange --src-range 194.126.0.0-194.126.127.255 -j DROP
+-A INPUT -m iprange --src-range 194.126.129.0-194.126.155.255 -j DROP
+-A INPUT -m iprange --src-range 194.126.158.0-194.126.177.255 -j DROP
+-A INPUT -m iprange --src-range 194.126.179.0-194.126.192.255 -j DROP
+-A INPUT -m iprange --src-range 194.126.194.0-194.126.225.255 -j DROP
+-A INPUT -m iprange --src-range 194.126.227.0-194.126.235.255 -j DROP
+-A INPUT -m iprange --src-range 194.126.237.0-194.126.255.255 -j DROP
 -A INPUT -m iprange --src-range 194.127.0.0-194.127.11.255 -j DROP
 -A INPUT -m iprange --src-range 194.127.13.0-194.127.19.255 -j DROP
 -A INPUT -m iprange --src-range 194.127.21.0-194.127.23.255 -j DROP
@@ -2953,10 +3017,20 @@
 -A INPUT -m iprange --src-range 194.62.8.0-194.62.173.255 -j DROP
 -A INPUT -m iprange --src-range 194.62.175.0-194.62.232.255 -j DROP
 -A INPUT -m iprange --src-range 194.62.235.0-194.62.255.255 -j DROP
+-A INPUT -m iprange --src-range 194.68.0.0-194.68.128.255 -j DROP
+-A INPUT -m iprange --src-range 194.68.130.0-194.68.255.255 -j DROP
+-A INPUT -m iprange --src-range 194.69.0.0-194.69.167.255 -j DROP
+-A INPUT -m iprange --src-range 194.69.169.0-194.69.170.255 -j DROP
+-A INPUT -m iprange --src-range 194.69.172.0-194.69.174.255 -j DROP
+-A INPUT -m iprange --src-range 194.69.176.0-194.69.193.255 -j DROP
+-A INPUT -m iprange --src-range 194.69.196.0-194.69.205.255 -j DROP
+-A INPUT -m iprange --src-range 194.69.207.0-194.69.255.255 -j DROP
 -A INPUT -m iprange --src-range 194.76.0.0-194.76.9.255 -j DROP
 -A INPUT -m iprange --src-range 194.76.14.0-194.76.35.255 -j DROP
 -A INPUT -m iprange --src-range 194.76.38.0-194.76.154.255 -j DROP
 -A INPUT -m iprange --src-range 194.76.156.0-194.76.253.255 -j DROP
+-A INPUT -m iprange --src-range 194.79.0.0-194.79.127.255 -j DROP
+-A INPUT -m iprange --src-range 194.79.192.0-194.79.255.255 -j DROP
 -A INPUT -m iprange --src-range 194.8.0.0-194.8.49.255 -j DROP
 -A INPUT -m iprange --src-range 194.8.51.0-194.8.74.255 -j DROP
 -A INPUT -m iprange --src-range 194.8.76.0-194.8.147.255 -j DROP
@@ -2974,6 +3048,22 @@
 -A INPUT -m iprange --src-range 194.99.52.0-194.99.99.255 -j DROP
 -A INPUT -m iprange --src-range 194.99.104.0-194.99.105.255 -j DROP
 -A INPUT -m iprange --src-range 194.99.108.0-194.99.255.255 -j DROP
+-A INPUT -m iprange --src-range 195.110.0.0-195.110.11.255 -j DROP
+-A INPUT -m iprange --src-range 195.110.14.0-195.110.29.255 -j DROP
+-A INPUT -m iprange --src-range 195.110.32.0-195.110.33.255 -j DROP
+-A INPUT -m iprange --src-range 195.110.36.0-195.110.255.255 -j DROP
+-A INPUT -m iprange --src-range 195.114.0.0-195.114.17.255 -j DROP
+-A INPUT -m iprange --src-range 195.114.20.0-195.114.23.255 -j DROP
+-A INPUT -m iprange --src-range 195.114.28.0-195.114.113.255 -j DROP
+-A INPUT -m iprange --src-range 195.114.116.0-195.114.255.255 -j DROP
+-A INPUT -m iprange --src-range 195.118.0.0-195.118.63.255 -j DROP
+-A INPUT -m iprange --src-range 195.118.80.0-195.118.109.255 -j DROP
+-A INPUT -m iprange --src-range 195.118.111.0-195.118.115.255 -j DROP
+-A INPUT -m iprange --src-range 195.118.120.0-195.118.195.255 -j DROP
+-A INPUT -m iprange --src-range 195.118.198.0-195.118.220.255 -j DROP
+-A INPUT -m iprange --src-range 195.118.224.0-195.118.230.255 -j DROP
+-A INPUT -m iprange --src-range 195.118.232.0-195.118.236.255 -j DROP
+-A INPUT -m iprange --src-range 195.118.238.0-195.118.255.255 -j DROP
 -A INPUT -m iprange --src-range 195.128.0.0-195.128.131.255 -j DROP
 -A INPUT -m iprange --src-range 195.128.133.0-195.128.145.255 -j DROP
 -A INPUT -m iprange --src-range 195.128.148.0-195.128.148.255 -j DROP
@@ -2989,6 +3079,9 @@
 -A INPUT -m iprange --src-range 195.130.223.0-195.130.255.255 -j DROP
 -A INPUT -m iprange --src-range 195.133.0.0-195.133.147.255 -j DROP
 -A INPUT -m iprange --src-range 195.133.152.0-195.133.255.255 -j DROP
+-A INPUT -m iprange --src-range 195.135.12.0-195.135.13.255 -j DROP
+-A INPUT -m iprange --src-range 195.135.48.0-195.135.63.255 -j DROP
+-A INPUT -m iprange --src-range 195.135.128.0-195.135.255.255 -j DROP
 -A INPUT -m iprange --src-range 195.138.0.0-195.138.55.255 -j DROP
 -A INPUT -m iprange --src-range 195.138.57.0-195.138.201.255 -j DROP
 -A INPUT -m iprange --src-range 195.138.203.0-195.138.203.255 -j DROP
@@ -3038,6 +3131,8 @@
 -A INPUT -m iprange --src-range 195.191.130.0-195.191.171.255 -j DROP
 -A INPUT -m iprange --src-range 195.191.174.0-195.191.243.255 -j DROP
 -A INPUT -m iprange --src-range 195.191.246.0-195.191.255.255 -j DROP
+-A INPUT -m iprange --src-range 195.192.0.0-195.192.235.255 -j DROP
+-A INPUT -m iprange --src-range 195.192.240.0-195.192.255.255 -j DROP
 -A INPUT -m iprange --src-range 195.20.0.0-195.20.11.255 -j DROP
 -A INPUT -m iprange --src-range 195.20.16.0-195.20.100.255 -j DROP
 -A INPUT -m iprange --src-range 195.20.102.0-195.20.197.255 -j DROP
@@ -3061,10 +3156,11 @@
 -A INPUT -m iprange --src-range 195.216.144.0-195.216.170.255 -j DROP
 -A INPUT -m iprange --src-range 195.216.172.0-195.216.186.255 -j DROP
 -A INPUT -m iprange --src-range 195.216.188.0-195.216.189.255 -j DROP
--A INPUT -m iprange --src-range 195.216.191.0-195.216.191.255 -j DROP
--A INPUT -m iprange --src-range 195.216.194.0-195.216.213.255 -j DROP
+-A INPUT -m iprange --src-range 195.216.191.0-195.216.213.255 -j DROP
 -A INPUT -m iprange --src-range 195.216.216.0-195.216.241.255 -j DROP
 -A INPUT -m iprange --src-range 195.216.243.0-195.216.255.255 -j DROP
+-A INPUT -m iprange --src-range 195.222.0.0-195.222.103.255 -j DROP
+-A INPUT -m iprange --src-range 195.222.105.0-195.222.255.255 -j DROP
 -A INPUT -m iprange --src-range 195.225.0.0-195.225.79.255 -j DROP
 -A INPUT -m iprange --src-range 195.225.81.0-195.225.203.255 -j DROP
 -A INPUT -m iprange --src-range 195.225.208.0-195.225.255.255 -j DROP
@@ -3108,6 +3204,8 @@
 -A INPUT -m iprange --src-range 195.35.103.0-195.35.105.255 -j DROP
 -A INPUT -m iprange --src-range 195.35.107.0-195.35.107.255 -j DROP
 -A INPUT -m iprange --src-range 195.35.109.0-195.35.255.255 -j DROP
+-A INPUT -m iprange --src-range 195.36.0.0-195.36.106.255 -j DROP
+-A INPUT -m iprange --src-range 195.36.108.0-195.36.127.255 -j DROP
 -A INPUT -m iprange --src-range 195.38.0.0-195.38.18.255 -j DROP
 -A INPUT -m iprange --src-range 195.38.20.0-195.38.255.255 -j DROP
 -A INPUT -m iprange --src-range 195.40.0.0-195.40.15.255 -j DROP
@@ -3145,10 +3243,21 @@
 -A INPUT -m iprange --src-range 195.66.83.0-195.66.111.255 -j DROP
 -A INPUT -m iprange --src-range 195.66.113.0-195.66.118.255 -j DROP
 -A INPUT -m iprange --src-range 195.66.120.0-195.66.255.255 -j DROP
+-A INPUT -m iprange --src-range 195.68.10.0-195.68.11.255 -j DROP
+-A INPUT -m iprange --src-range 195.68.59.0-195.68.59.255 -j DROP
+-A INPUT -m iprange --src-range 195.68.76.0-195.68.77.255 -j DROP
+-A INPUT -m iprange --src-range 195.68.91.0-195.68.91.255 -j DROP
+-A INPUT -m iprange --src-range 195.68.110.0-195.68.110.255 -j DROP
+-A INPUT -m iprange --src-range 195.68.128.0-195.68.193.255 -j DROP
+-A INPUT -m iprange --src-range 195.68.196.0-195.68.223.255 -j DROP
+-A INPUT -m iprange --src-range 195.68.228.0-195.68.247.255 -j DROP
+-A INPUT -m iprange --src-range 195.68.252.0-195.68.253.255 -j DROP
 -A INPUT -m iprange --src-range 195.7.0.0-195.7.95.255 -j DROP
 -A INPUT -m iprange --src-range 195.7.128.0-195.7.255.255 -j DROP
 -A INPUT -m iprange --src-range 195.72.0.0-195.72.151.255 -j DROP
 -A INPUT -m iprange --src-range 195.72.156.0-195.72.255.255 -j DROP
+-A INPUT -m iprange --src-range 195.74.0.0-195.74.79.255 -j DROP
+-A INPUT -m iprange --src-range 195.74.81.0-195.74.255.255 -j DROP
 -A INPUT -m iprange --src-range 195.78.0.0-195.78.81.255 -j DROP
 -A INPUT -m iprange --src-range 195.78.83.0-195.78.255.255 -j DROP
 -A INPUT -m iprange --src-range 195.80.0.0-195.80.43.255 -j DROP
@@ -3276,21 +3385,35 @@
 -A INPUT -m iprange --src-range 212.108.124.0-212.108.255.255 -j DROP
 -A INPUT -m iprange --src-range 212.121.0.0-212.121.159.255 -j DROP
 -A INPUT -m iprange --src-range 212.121.192.0-212.121.255.255 -j DROP
+-A INPUT -m iprange --src-range 212.122.0.0-212.122.95.255 -j DROP
+-A INPUT -m iprange --src-range 212.122.128.0-212.122.255.255 -j DROP
 -A INPUT -m iprange --src-range 212.146.0.0-212.146.191.255 -j DROP
 -A INPUT -m iprange --src-range 212.18.0.0-212.18.123.255 -j DROP
 -A INPUT -m iprange --src-range 212.18.125.0-212.18.239.255 -j DROP
 -A INPUT -m iprange --src-range 212.18.248.0-212.18.255.255 -j DROP
+-A INPUT -m iprange --src-range 212.180.0.0-212.180.21.255 -j DROP
+-A INPUT -m iprange --src-range 212.180.24.0-212.180.25.255 -j DROP
+-A INPUT -m iprange --src-range 212.180.30.0-212.180.93.255 -j DROP
+-A INPUT -m iprange --src-range 212.180.108.0-212.180.255.255 -j DROP
 -A INPUT -m iprange --src-range 212.19.0.0-212.19.159.255 -j DROP
 -A INPUT -m iprange --src-range 212.19.192.0-212.19.255.255 -j DROP
+-A INPUT -m iprange --src-range 212.197.0.0-212.197.191.255 -j DROP
+-A INPUT -m iprange --src-range 212.235.0.0-212.235.191.255 -j DROP
 -A INPUT -m iprange --src-range 212.23.0.0-212.23.159.255 -j DROP
 -A INPUT -m iprange --src-range 212.23.192.0-212.23.255.255 -j DROP
 -A INPUT -m iprange --src-range 212.24.0.0-212.24.121.255 -j DROP
 -A INPUT -m iprange --src-range 212.24.123.0-212.24.255.255 -j DROP
 -A INPUT -m iprange --src-range 212.30.0.0-212.30.95.255 -j DROP
 -A INPUT -m iprange --src-range 212.30.128.0-212.30.255.255 -j DROP
+-A INPUT -m iprange --src-range 212.37.0.0-212.37.191.255 -j DROP
+-A INPUT -m iprange --src-range 212.37.224.0-212.37.255.255 -j DROP
+-A INPUT -m iprange --src-range 212.39.0.0-212.39.127.255 -j DROP
+-A INPUT -m iprange --src-range 212.39.160.0-212.39.225.255 -j DROP
+-A INPUT -m iprange --src-range 212.39.227.0-212.39.229.255 -j DROP
 -A INPUT -m iprange --src-range 212.43.0.0-212.43.192.255 -j DROP
 -A INPUT -m iprange --src-range 212.43.195.0-212.43.252.255 -j DROP
 -A INPUT -m iprange --src-range 212.43.254.0-212.43.255.255 -j DROP
+-A INPUT -m iprange --src-range 212.44.0.0-212.44.223.255 -j DROP
 -A INPUT -m iprange --src-range 212.46.0.0-212.46.48.255 -j DROP
 -A INPUT -m iprange --src-range 212.46.50.0-212.46.51.255 -j DROP
 -A INPUT -m iprange --src-range 212.46.53.0-212.46.149.255 -j DROP
@@ -3299,10 +3422,8 @@
 -A INPUT -m iprange --src-range 212.51.192.0-212.51.255.255 -j DROP
 -A INPUT -m iprange --src-range 212.52.0.0-212.52.23.255 -j DROP
 -A INPUT -m iprange --src-range 212.52.25.0-212.52.255.255 -j DROP
--A INPUT -m iprange --src-range 212.69.0.0-212.69.169.255 -j DROP
--A INPUT -m iprange --src-range 212.69.176.0-212.69.176.255 -j DROP
--A INPUT -m iprange --src-range 212.69.185.0-212.69.186.255 -j DROP
--A INPUT -m iprange --src-range 212.69.191.0-212.69.255.255 -j DROP
+-A INPUT -m iprange --src-range 212.62.0.0-212.62.127.255 -j DROP
+-A INPUT -m iprange --src-range 212.62.192.0-212.62.255.255 -j DROP
 -A INPUT -m iprange --src-range 212.78.0.0-212.78.31.255 -j DROP
 -A INPUT -m iprange --src-range 212.78.64.0-212.78.255.255 -j DROP
 -A INPUT -m iprange --src-range 212.81.0.0-212.81.43.255 -j DROP
@@ -3332,7 +3453,6 @@
 -A INPUT -m iprange --src-range 213.144.224.0-213.144.255.255 -j DROP
 -A INPUT -m iprange --src-range 213.151.0.0-213.151.159.255 -j DROP
 -A INPUT -m iprange --src-range 213.151.192.0-213.151.255.255 -j DROP
--A INPUT -m iprange --src-range 213.152.32.0-213.152.255.255 -j DROP
 -A INPUT -m iprange --src-range 213.156.0.0-213.156.131.255 -j DROP
 -A INPUT -m iprange --src-range 213.156.136.0-213.156.255.255 -j DROP
 -A INPUT -m iprange --src-range 213.159.0.0-213.159.7.255 -j DROP
@@ -3342,6 +3462,8 @@
 -A INPUT -m iprange --src-range 213.159.144.0-213.159.255.255 -j DROP
 -A INPUT -m iprange --src-range 213.166.0.0-213.166.191.255 -j DROP
 -A INPUT -m iprange --src-range 213.166.224.0-213.166.255.255 -j DROP
+-A INPUT -m iprange --src-range 213.167.0.0-213.167.227.255 -j DROP
+-A INPUT -m iprange --src-range 213.167.232.0-213.167.246.255 -j DROP
 -A INPUT -m iprange --src-range 213.169.0.0-213.169.159.255 -j DROP
 -A INPUT -m iprange --src-range 213.169.192.0-213.169.255.255 -j DROP
 -A INPUT -m iprange --src-range 213.173.0.0-213.173.47.255 -j DROP
@@ -3363,16 +3485,22 @@
 -A INPUT -m iprange --src-range 213.188.0.0-213.188.159.255 -j DROP
 -A INPUT -m iprange --src-range 213.188.192.0-213.188.255.255 -j DROP
 -A INPUT -m iprange --src-range 213.190.96.0-213.190.255.255 -j DROP
+-A INPUT -m iprange --src-range 213.205.0.0-213.205.95.255 -j DROP
+-A INPUT -m iprange --src-range 213.205.128.0-213.205.255.255 -j DROP
 -A INPUT -m iprange --src-range 213.213.0.0-213.213.11.255 -j DROP
 -A INPUT -m iprange --src-range 213.213.16.0-213.213.255.255 -j DROP
 -A INPUT -m iprange --src-range 213.217.0.0-213.217.11.255 -j DROP
 -A INPUT -m iprange --src-range 213.217.16.0-213.217.255.255 -j DROP
+-A INPUT -m iprange --src-range 213.222.0.0-213.222.63.255 -j DROP
+-A INPUT -m iprange --src-range 213.222.128.0-213.222.255.255 -j DROP
 -A INPUT -m iprange --src-range 213.225.0.0-213.225.159.255 -j DROP
 -A INPUT -m iprange --src-range 213.225.192.0-213.225.238.255 -j DROP
 -A INPUT -m iprange --src-range 213.225.240.0-213.225.255.255 -j DROP
 -A INPUT -m iprange --src-range 213.226.0.0-213.226.71.255 -j DROP
 -A INPUT -m iprange --src-range 213.226.76.0-213.226.255.255 -j DROP
 -A INPUT -m iprange --src-range 213.228.64.0-213.228.255.255 -j DROP
+-A INPUT -m iprange --src-range 213.251.0.0-213.251.127.255 -j DROP
+-A INPUT -m iprange --src-range 213.251.192.0-213.251.255.255 -j DROP
 -A INPUT -m iprange --src-range 213.255.0.0-213.255.194.255 -j DROP
 -A INPUT -m iprange --src-range 213.255.196.0-213.255.255.255 -j DROP
 -A INPUT -m iprange --src-range 213.232.0.0-213.232.79.255 -j DROP
@@ -3394,7 +3522,8 @@
 -A INPUT -m iprange --src-range 217.113.208.0-217.113.255.255 -j DROP
 -A INPUT -m iprange --src-range 217.114.0.0-217.114.199.255 -j DROP
 -A INPUT -m iprange --src-range 217.114.208.0-217.114.255.255 -j DROP
--A INPUT -m iprange --src-range 217.115.112.0-217.115.127.255 -j DROP
+-A INPUT -m iprange --src-range 217.115.0.0-217.115.160.255 -j DROP
+-A INPUT -m iprange --src-range 217.115.176.0-217.115.255.255 -j DROP
 -A INPUT -m iprange --src-range 217.119.0.0-217.119.141.255 -j DROP
 -A INPUT -m iprange --src-range 217.119.143.0-217.119.175.255 -j DROP
 -A INPUT -m iprange --src-range 217.119.192.0-217.119.255.255 -j DROP
@@ -3454,8 +3583,6 @@
 -A INPUT -m iprange --src-range 217.77.240.0-217.77.255.255 -j DROP
 -A INPUT -m iprange --src-range 217.9.0.0-217.9.9.255 -j DROP
 -A INPUT -m iprange --src-range 217.9.11.0-217.9.255.255 -j DROP
--A INPUT -m iprange --src-range 23.138.0.0-23.138.203.255 -j DROP
--A INPUT -m iprange --src-range 23.138.205.0-23.138.255.255 -j DROP
 -A INPUT -m iprange --src-range 24.0.0.0-24.229.255.255 -j DROP
 -A INPUT -m iprange --src-range 24.230.16.0-24.230.16.255 -j DROP
 -A INPUT -m iprange --src-range 24.230.18.0-24.230.19.255 -j DROP
@@ -3484,7 +3611,9 @@
 -A INPUT -m iprange --src-range 31.217.240.0-31.217.255.255 -j DROP
 -A INPUT -m iprange --src-range 31.222.0.0-31.222.191.255 -j DROP
 -A INPUT -m iprange --src-range 31.222.200.0-31.222.255.255 -j DROP
--A INPUT -m iprange --src-range 31.24.65.0-31.24.69.255 -j DROP
+-A INPUT -m iprange --src-range 31.24.0.0-31.24.79.255 -j DROP
+-A INPUT -m iprange --src-range 31.24.81.0-31.24.239.255 -j DROP
+-A INPUT -m iprange --src-range 31.24.248.0-31.24.255.255 -j DROP
 -A INPUT -m iprange --src-range 31.42.0.0-31.42.115.255 -j DROP
 -A INPUT -m iprange --src-range 31.42.120.0-31.42.255.255 -j DROP
 -A INPUT -m iprange --src-range 31.43.0.0-31.43.165.255 -j DROP
@@ -3516,9 +3645,10 @@
 -A INPUT -m iprange --src-range 31.6.0.0-31.6.39.255 -j DROP
 -A INPUT -m iprange --src-range 31.6.41.0-31.6.255.255 -j DROP
 -A INPUT -m iprange --src-range 31.7.0.0-31.7.247.255 -j DROP
--A INPUT -m iprange --src-range 31.98.32.0-31.98.255.255 -j DROP
 -A INPUT -m iprange --src-range 32.0.0.0-32.239.255.255 -j DROP
 -A INPUT -m iprange --src-range 32.242.0.0-32.255.255.255 -j DROP
+-A INPUT -m iprange --src-range 37.0.0.0-37.0.72.255 -j DROP
+-A INPUT -m iprange --src-range 37.0.80.0-37.0.255.255 -j DROP
 -A INPUT -m iprange --src-range 37.1.0.0-37.1.231.255 -j DROP
 #Alsatis
 -A INPUT -m iprange --src-range 37.1.240.0-37.1.255.255 -j DROP
@@ -3558,6 +3688,10 @@
 -A INPUT -m iprange --src-range 37.230.49.0-37.230.255.255 -j DROP
 -A INPUT -m iprange --src-range 37.235.0.0-37.235.87.255 -j DROP
 -A INPUT -m iprange --src-range 37.235.96.0-37.235.255.255 -j DROP
+-A INPUT -m iprange --src-range 37.25.0.0-37.25.39.255 -j DROP
+-A INPUT -m iprange --src-range 37.25.44.0-37.25.55.255 -j DROP
+-A INPUT -m iprange --src-range 37.25.64.0-37.25.71.255 -j DROP
+-A INPUT -m iprange --src-range 37.25.80.0-37.25.255.255 -j DROP
 -A INPUT -m iprange --src-range 37.26.0.0-37.26.175.255 -j DROP
 -A INPUT -m iprange --src-range 37.26.192.0-37.26.239.255 -j DROP
 -A INPUT -m iprange --src-range 37.26.248.0-37.26.255.255 -j DROP
@@ -3613,7 +3747,7 @@
 -A INPUT -m iprange --src-range 45.129.52.0-45.129.87.255 -j DROP
 -A INPUT -m iprange --src-range 45.129.89.0-45.129.89.255 -j DROP
 -A INPUT -m iprange --src-range 45.129.91.0-45.129.107.255 -j DROP
--A INPUT -m iprange --src-range 45.129.116.0-45.129.191.255 -j DROP
+-A INPUT -m iprange --src-range 45.129.112.0-45.129.191.255 -j DROP
 -A INPUT -m iprange --src-range 45.129.193.0-45.129.194.255 -j DROP
 -A INPUT -m iprange --src-range 45.129.196.0-45.129.215.255 -j DROP
 -A INPUT -m iprange --src-range 45.129.220.0-45.129.255.255 -j DROP
@@ -3656,6 +3790,10 @@
 -A INPUT -m iprange --src-range 45.139.35.0-45.139.71.255 -j DROP
 -A INPUT -m iprange --src-range 45.139.76.0-45.139.227.255 -j DROP
 -A INPUT -m iprange --src-range 45.139.231.0-45.139.255.255 -j DROP
+-A INPUT -m iprange --src-range 45.14.0.0-45.14.147.255 -j DROP
+-A INPUT -m iprange --src-range 45.14.152.0-45.14.166.255 -j DROP
+-A INPUT -m iprange --src-range 45.14.168.0-45.14.175.255 -j DROP
+-A INPUT -m iprange --src-range 45.14.180.0-45.14.255.255 -j DROP
 -A INPUT -m iprange --src-range 45.140.0.0-45.140.19.255 -j DROP
 -A INPUT -m iprange --src-range 45.140.24.0-45.140.58.255 -j DROP
 -A INPUT -m iprange --src-range 45.140.60.0-45.140.67.255 -j DROP
@@ -3772,6 +3910,7 @@
 -A INPUT -m iprange --src-range 45.81.64.0-45.81.79.255 -j DROP
 -A INPUT -m iprange --src-range 45.81.88.0-45.81.171.255 -j DROP
 -A INPUT -m iprange --src-range 45.81.176.0-45.81.191.255 -j DROP
+-A INPUT -m iprange --src-range 45.81.216.0-45.81.203.255 -j DROP
 -A INPUT -m iprange --src-range 45.81.200.0-45.81.203.255 -j DROP
 -A INPUT -m iprange --src-range 45.81.222.0-45.81.255.255 -j DROP
 -A INPUT -m iprange --src-range 45.82.0.0-45.82.179.255 -j DROP
@@ -3852,6 +3991,8 @@
 -A INPUT -m iprange --src-range 46.16.0.0-46.16.39.255 -j DROP
 -A INPUT -m iprange --src-range 46.16.48.0-46.16.199.255 -j DROP
 -A INPUT -m iprange --src-range 46.16.204.0-46.16.255.255 -j DROP
+-A INPUT -m iprange --src-range 46.163.0.0-46.163.103.255 -j DROP
+-A INPUT -m iprange --src-range 46.163.112.0-46.163.255.255 -j DROP
 -A INPUT -m iprange --src-range 46.17.0.0-46.17.63.255 -j DROP
 -A INPUT -m iprange --src-range 46.17.72.0-46.17.79.255 -j DROP
 -A INPUT -m iprange --src-range 46.17.88.0-46.17.255.255 -j DROP
@@ -3875,6 +4016,7 @@
 -A INPUT -m iprange --src-range 46.19.112.0-46.19.119.255 -j DROP
 -A INPUT -m iprange --src-range 46.19.136.0-46.19.176.255 -j DROP
 -A INPUT -m iprange --src-range 46.19.184.0-46.19.255.255 -j DROP
+-A INPUT -m iprange --src-range 46.193.208.0-46.193.215.255 -j DROP
 -A INPUT -m iprange --src-range 46.193.224.0-46.193.239.255 -j DROP
 -A INPUT -m iprange --src-range 46.20.0.0-46.20.159.255 -j DROP
 -A INPUT -m iprange --src-range 46.20.176.0-46.20.255.255 -j DROP
@@ -3916,8 +4058,7 @@
 -A INPUT -m iprange --src-range 46.255.0.0-46.255.47.255 -j DROP
 -A INPUT -m iprange --src-range 46.255.56.0-46.255.127.255 -j DROP
 -A INPUT -m iprange --src-range 46.255.136.0-46.255.159.255 -j DROP
--A INPUT -m iprange --src-range 46.255.168.0-46.255.175.255 -j DROP
--A INPUT -m iprange --src-range 46.255.184.0-46.255.199.255 -j DROP
+-A INPUT -m iprange --src-range 46.255.168.0-46.255.199.255 -j DROP
 -A INPUT -m iprange --src-range 46.255.208.0-46.255.255.255 -j DROP
 -A INPUT -m iprange --src-range 46.28.0.0-46.28.167.255 -j DROP
 -A INPUT -m iprange --src-range 46.28.176.0-46.28.255.255 -j DROP
@@ -3995,6 +4136,8 @@
 -A INPUT -m iprange --src-range 5.183.252.0-5.183.255.255 -j DROP
 -A INPUT -m iprange --src-range 5.187.0.0-5.187.95.255 -j DROP
 -A INPUT -m iprange --src-range 5.187.128.0-5.187.255.255 -j DROP
+-A INPUT -m iprange --src-range 5.198.0.0-5.198.191.255 -j DROP
+-A INPUT -m iprange --src-range 5.198.224.0-5.198.255.255 -j DROP
 -A INPUT -m iprange --src-range 5.226.16.0-5.226.255.255 -j DROP
 -A INPUT -m iprange --src-range 5.23.0.0-5.23.39.255 -j DROP
 -A INPUT -m iprange --src-range 5.23.48.0-5.23.255.255 -j DROP
@@ -4029,10 +4172,11 @@
 -A INPUT -m iprange --src-range 51.195.0.0-51.195.19.255 -j DROP
 -A INPUT -m iprange --src-range 51.89.12.0-51.89.79.255 -j DROP
 -A INPUT -m iprange --src-range 57.128.158.0-57.128.191.255 -j DROP
--A INPUT -m iprange --src-range 57.129.128.0-57.129.145.255 -j DROP
--A INPUT -m iprange --src-range 57.131.0.0-57.131.0.255 -j DROP
--A INPUT -m iprange --src-range 57.131.2.0-57.131.53.255 -j DROP
--A INPUT -m iprange --src-range 57.131.128.0-57.131.150.255 -j DROP
+-A INPUT -m iprange --src-range 57.129.0.0-57.129.176.255 -j DROP
+-A INPUT -m iprange --src-range 57.131.0.0-57.131.43.255 -j DROP
+-A INPUT -m iprange --src-range 57.131.45.0-57.131.53.255 -j DROP
+-A INPUT -m iprange --src-range 57.131.128.0-57.131.164.255 -j DROP
+-A INPUT -m iprange --src-range 57.131.192.0-57.131.200.255 -j DROP
 -A INPUT -m iprange --src-range 62.100.0.0-62.100.127.255 -j DROP
 -A INPUT -m iprange --src-range 62.100.160.0-62.100.195.255 -j DROP
 -A INPUT -m iprange --src-range 62.100.200.0-62.100.207.255 -j DROP
@@ -4053,6 +4197,9 @@
 -A INPUT -m iprange --src-range 62.192.0.0-62.192.139.255 -j DROP
 -A INPUT -m iprange --src-range 62.192.148.0-62.192.155.255 -j DROP
 -A INPUT -m iprange --src-range 62.192.160.0-62.192.255.255 -j DROP
+-A INPUT -m iprange --src-range 62.193.0.0-62.193.31.255 -j DROP
+-A INPUT -m iprange --src-range 62.193.64.0-62.193.207.255 -j DROP
+-A INPUT -m iprange --src-range 62.193.240.0-62.193.255.255 -j DROP
 -A INPUT -m iprange --src-range 62.197.0.0-62.197.146.255 -j DROP
 -A INPUT -m iprange --src-range 62.197.148.0-62.197.150.255 -j DROP
 -A INPUT -m iprange --src-range 62.197.153.0-62.197.255.255 -j DROP
@@ -4062,6 +4209,8 @@
 -A INPUT -m iprange --src-range 62.204.63.0-62.204.255.255 -j DROP
 -A INPUT -m iprange --src-range 62.212.0.0-62.212.95.255 -j DROP
 -A INPUT -m iprange --src-range 62.212.128.0-62.212.255.255 -j DROP
+-A INPUT -m iprange --src-range 62.233.0.0-62.233.51.255 -j DROP
+-A INPUT -m iprange --src-range 62.233.53.0-62.233.255.255 -j DROP
 -A INPUT -m iprange --src-range 62.240.0.0-62.240.223.255 -j DROP
 -A INPUT -m iprange --src-range 62.240.229.0-62.240.230.255 -j DROP
 -A INPUT -m iprange --src-range 62.240.233.0-62.240.239.255 -j DROP
@@ -4124,15 +4273,27 @@
 -A INPUT -m iprange --src-range 77.107.89.0-77.107.255.255 -j DROP
 -A INPUT -m iprange --src-range 77.111.124.0-77.111.191.255 -j DROP
 -A INPUT -m iprange --src-range 77.137.0.0-77.137.195.255 -j DROP
--A INPUT -m iprange --src-range 77.238.104.0-77.238.127.255 -j DROP
+-A INPUT -m iprange --src-range 77.233.0.0-77.233.95.255 -j DROP
+-A INPUT -m iprange --src-range 77.233.128.0-77.233.255.255 -j DROP
+-A INPUT -m iprange --src-range 77.240.0.0-77.240.191.255 -j DROP
+-A INPUT -m iprange --src-range 77.240.208.0-77.240.255.255 -j DROP
 -A INPUT -m iprange --src-range 77.245.0.0-77.245.127.255 -j DROP
 -A INPUT -m iprange --src-range 77.245.144.0-77.245.255.255 -j DROP
 -A INPUT -m iprange --src-range 77.246.0.0-77.246.79.255 -j DROP
 -A INPUT -m iprange --src-range 77.246.96.0-77.246.255.255 -j DROP
 -A INPUT -m iprange --src-range 77.247.0.0-77.247.103.255 -j DROP
 -A INPUT -m iprange --src-range 77.247.108.0-77.247.255.255 -j DROP
+-A INPUT -m iprange --src-range 77.70.0.0-77.70.139.255 -j DROP
+-A INPUT -m iprange --src-range 77.70.143.0-77.70.143.255 -j DROP
+-A INPUT -m iprange --src-range 77.70.149.0-77.70.150.255 -j DROP
+-A INPUT -m iprange --src-range 77.70.152.0-77.70.155.255 -j DROP
+-A INPUT -m iprange --src-range 77.70.164.0-77.70.203.255 -j DROP
+-A INPUT -m iprange --src-range 77.70.205.0-77.70.235.255 -j DROP
+-A INPUT -m iprange --src-range 77.70.240.0-77.70.251.255 -j DROP
 -A INPUT -m iprange --src-range 77.72.0.0-77.72.39.255 -j DROP
 -A INPUT -m iprange --src-range 77.72.48.0-77.72.87.255 -j DROP
+-A INPUT -m iprange --src-range 77.32.0.0-77.32.127.255 -j DROP
+-A INPUT -m iprange --src-range 77.32.224.0-77.32.255.255 -j DROP
 -A INPUT -m iprange --src-range 77.72.96.0-77.72.255.255 -j DROP
 -A INPUT -m iprange --src-range 77.73.0.0-77.73.33.255 -j DROP
 -A INPUT -m iprange --src-range 77.73.36.0-77.73.115.255 -j DROP
@@ -4259,7 +4420,7 @@
 -A INPUT -m iprange --src-range 80.74.0.0-80.74.15.255 -j DROP
 -A INPUT -m iprange --src-range 80.74.24.0-80.74.63.255 -j DROP
 -A INPUT -m iprange --src-range 80.74.80.0-80.74.255.255 -j DROP
--A INPUT -m iprange --src-range 80.78.16.0-80.78.255.255 -j DROP
+-A INPUT -m iprange --src-range 80.78.15.0-80.78.255.255 -j DROP
 -A INPUT -m iprange --src-range 80.82.0.0-80.82.223.255 -j DROP
 -A INPUT -m iprange --src-range 80.82.240.0-80.82.255.255 -j DROP
 -A INPUT -m iprange --src-range 80.87.0.0-80.87.205.255 -j DROP
@@ -4293,6 +4454,9 @@
 -A INPUT -m iprange --src-range 81.200.0.0-81.200.31.255 -j DROP
 -A INPUT -m iprange --src-range 81.200.48.0-81.200.175.255 -j DROP
 -A INPUT -m iprange --src-range 81.200.192.0-81.200.255.255 -j DROP
+-A INPUT -m iprange --src-range 81.201.0.0-81.201.116.255 -j DROP
+-A INPUT -m iprange --src-range 81.201.118.0-81.201.175.255 -j DROP
+-A INPUT -m iprange --src-range 81.201.192.0-81.201.255.255 -j DROP
 -A INPUT -m iprange --src-range 81.22.0.0-81.22.135.255 -j DROP
 -A INPUT -m iprange --src-range 81.22.137.0-81.22.141.255 -j DROP
 -A INPUT -m iprange --src-range 81.22.143.0-81.22.215.255 -j DROP
@@ -4309,9 +4473,16 @@
 -A INPUT -m iprange --src-range 81.29.152.0-81.29.255.255 -j DROP
 -A INPUT -m iprange --src-range 81.31.0.0-81.31.204.255 -j DROP
 -A INPUT -m iprange --src-range 81.31.208.0-81.31.255.255 -j DROP
+-A INPUT -m iprange --src-range 81.52.185.0-81.52.185.255 -j DROP
+-A INPUT -m iprange --src-range 81.52.202.0-81.52.202.255 -j DROP
+-A INPUT -m iprange --src-range 81.85.0.0-81.85.61.255 -j DROP
+-A INPUT -m iprange --src-range 81.85.63.0-81.85.255.255 -j DROP
 -A INPUT -m iprange --src-range 81.88.0.0-81.88.95.255 -j DROP
 -A INPUT -m iprange --src-range 81.88.112.0-81.88.255.255 -j DROP
 -A INPUT -m iprange --src-range 81.91.77.0-81.91.255.255 -j DROP
+-A INPUT -m iprange --src-range 81.92.0.0-81.92.79.255 -j DROP
+-A INPUT -m iprange --src-range 81.92.96.0-81.92.111.255 -j DROP
+-A INPUT -m iprange --src-range 81.92.128.0-81.92.255.255 -j DROP
 -A INPUT -m iprange --src-range 81.93.32.0-81.93.239.255 -j DROP
 -A INPUT -m iprange --src-range 82.101.64.0-82.101.255.255 -j DROP
 -A INPUT -m iprange --src-range 82.115.0.0-82.115.211.255 -j DROP
@@ -4337,6 +4508,9 @@
 -A INPUT -m iprange --src-range 82.153.0.0-82.153.147.255 -j DROP
 -A INPUT -m iprange --src-range 82.153.149.0-82.153.201.255 -j DROP
 -A INPUT -m iprange --src-range 82.153.203.0-82.153.255.255 -j DROP
+-A INPUT -m iprange --src-range 82.163.0.0-82.163.7.255 -j DROP
+-A INPUT -m iprange --src-range 82.163.9.0-82.163.35.255 -j DROP
+-A INPUT -m iprange --src-range 82.163.40.0-82.163.255.255 -j DROP
 -A INPUT -m iprange --src-range 82.196.0.0-82.196.15.255 -j DROP
 -A INPUT -m iprange --src-range 82.196.24.0-82.196.255.255 -j DROP
 -A INPUT -m iprange --src-range 82.197.0.0-82.197.95.255 -j DROP
@@ -4357,6 +4531,7 @@
 -A INPUT -m iprange --src-range 82.96.0.0-82.96.127.255 -j DROP
 -A INPUT -m iprange --src-range 82.96.192.0-82.96.255.255 -j DROP
 -A INPUT -m iprange --src-range 82.97.64.0-82.97.255.255 -j DROP
+-A INPUT -m iprange --src-range 82.98.64.0-82.98.255.255 -j DROP
 -A INPUT -m iprange --src-range 83.136.0.0-83.136.147.255 -j DROP
 -A INPUT -m iprange --src-range 83.136.152.0-83.136.159.255 -j DROP
 -A INPUT -m iprange --src-range 83.136.168.0-83.136.213.255 -j DROP
@@ -4373,8 +4548,7 @@
 -A INPUT -m iprange --src-range 83.150.0.0-83.150.216.255 -j DROP
 -A INPUT -m iprange --src-range 83.150.219.0-83.150.243.255 -j DROP
 -A INPUT -m iprange --src-range 83.150.248.0-83.150.255.255 -j DROP
--A INPUT -m iprange --src-range 83.167.0.0-83.167.31.255 -j DROP
--A INPUT -m iprange --src-range 83.167.64.0-83.167.127.255 -j DROP
+-A INPUT -m iprange --src-range 83.167.0.0-83.167.127.255 -j DROP
 -A INPUT -m iprange --src-range 83.167.160.0-83.167.255.255 -j DROP
 -A INPUT -m iprange --src-range 83.169.0.0-83.169.64.255 -j DROP
 -A INPUT -m iprange --src-range 83.169.128.0-83.169.255.255 -j DROP
@@ -4382,6 +4556,8 @@
 -A INPUT -m iprange --src-range 83.171.212.0-83.171.255.255 -j DROP
 -A INPUT -m iprange --src-range 83.229.0.0-83.229.18.255 -j DROP
 -A INPUT -m iprange --src-range 83.229.20.0-83.229.255.255 -j DROP
+-A INPUT -m iprange --src-range 83.243.0.0-83.243.123.255 -j DROP
+-A INPUT -m iprange --src-range 83.243.128.0-83.243.255.255 -j DROP
 -A INPUT -m iprange --src-range 83.68.0.0-83.68.95.255 -j DROP
 -A INPUT -m iprange --src-range 83.68.128.0-83.68.255.255 -j DROP
 -A INPUT -m iprange --src-range 83.97.0.0-83.97.55.255 -j DROP
@@ -4511,8 +4687,7 @@
 -A INPUT -m iprange --src-range 88.202.120.0-88.202.236.255 -j DROP
 -A INPUT -m iprange --src-range 88.202.240.0-88.202.255.255 -j DROP
 -A INPUT -m iprange --src-range 88.209.0.0-88.209.243.255 -j DROP
--A INPUT -m iprange --src-range 88.209.245.0-88.209.245.255 -j DROP
--A INPUT -m iprange --src-range 88.209.247.0-88.209.255.255 -j DROP
+-A INPUT -m iprange --src-range 88.209.245.0-88.209.255.255 -j DROP
 -A INPUT -m iprange --src-range 88.212.0.0-88.212.143.255 -j DROP
 -A INPUT -m iprange --src-range 88.212.156.0-88.212.225.255 -j DROP
 -A INPUT -m iprange --src-range 88.218.0.0-88.218.11.255 -j DROP
@@ -4629,8 +4804,7 @@
 -A INPUT -m iprange --src-range 91.194.0.0-91.194.59.255 -j DROP
 -A INPUT -m iprange --src-range 91.194.62.0-91.194.95.255 -j DROP
 -A INPUT -m iprange --src-range 91.194.102.0-91.194.177.255 -j DROP
--A INPUT -m iprange --src-range 91.194.180.0-91.194.207.255 -j DROP
--A INPUT -m iprange --src-range 91.194.210.0-91.194.255.255 -j DROP
+-A INPUT -m iprange --src-range 91.194.180.0-91.194.255.255 -j DROP
 -A INPUT -m iprange --src-range 91.195.0.0-91.195.163.255 -j DROP
 -A INPUT -m iprange --src-range 91.195.166.0-91.195.205.255 -j DROP
 -A INPUT -m iprange --src-range 91.195.208.0-91.195.255.255 -j DROP
@@ -4827,8 +5001,7 @@
 -A INPUT -m iprange --src-range 91.229.228.0-91.229.229.255 -j DROP
 -A INPUT -m iprange --src-range 91.229.232.0-91.229.255.255 -j DROP
 -A INPUT -m iprange --src-range 91.230.2.0-91.230.65.255 -j DROP
--A INPUT -m iprange --src-range 91.230.68.0-91.230.109.255 -j DROP
--A INPUT -m iprange --src-range 91.230.112.0-91.230.168.255 -j DROP
+-A INPUT -m iprange --src-range 91.230.68.0-91.230.168.255 -j DROP
 -A INPUT -m iprange --src-range 91.230.170.0-91.230.234.255 -j DROP
 -A INPUT -m iprange --src-range 91.230.236.0-91.230.255.255 -j DROP
 -A INPUT -m iprange --src-range 91.231.0.0-91.231.46.255 -j DROP
@@ -4842,6 +5015,11 @@
 -A INPUT -m iprange --src-range 91.232.188.0-91.232.223.255 -j DROP
 -A INPUT -m iprange --src-range 91.232.225.0-91.232.241.255 -j DROP
 -A INPUT -m iprange --src-range 91.232.243.0-91.232.255.255 -j DROP
+-A INPUT -m iprange --src-range 91.233.0.0-91.233.65.255 -j DROP
+-A INPUT -m iprange --src-range 91.233.67.0-91.233.67.255 -j DROP
+-A INPUT -m iprange --src-range 91.233.69.0-91.233.118.255 -j DROP
+-A INPUT -m iprange --src-range 91.233.120.0-91.233.121.255 -j DROP
+-A INPUT -m iprange --src-range 91.233.123.0-91.233.255.255 -j DROP
 -A INPUT -m iprange --src-range 91.234.0.0-91.234.8.255 -j DROP
 -A INPUT -m iprange --src-range 91.234.10.0-91.234.103.255 -j DROP
 -A INPUT -m iprange --src-range 91.234.108.0-91.234.235.255 -j DROP
@@ -4982,8 +5160,7 @@
 -A INPUT -m iprange --src-range 94.100.140.0-94.100.159.255 -j DROP
 -A INPUT -m iprange --src-range 94.100.176.0-94.100.255.255 -j DROP
 -A INPUT -m iprange --src-range 94.103.0.0-94.103.119.255 -j DROP
--A INPUT -m iprange --src-range 94.103.124.0-94.103.127.255 -j DROP
--A INPUT -m iprange --src-range 94.103.144.0-94.103.185.255 -j DROP
+-A INPUT -m iprange --src-range 94.103.124.0-94.103.185.255 -j DROP
 -A INPUT -m iprange --src-range 94.103.187.0-94.103.255.255 -j DROP
 -A INPUT -m iprange --src-range 94.124.0.0-94.124.79.255 -j DROP
 -A INPUT -m iprange --src-range 94.124.88.0-94.124.127.255 -j DROP
@@ -5074,6 +5251,10 @@
 -A INPUT -m iprange --src-range 95.174.0.0-95.174.71.255 -j DROP
 -A INPUT -m iprange --src-range 95.174.80.0-95.174.159.255 -j DROP
 -A INPUT -m iprange --src-range 95.174.192.0-95.174.255.255 -j DROP
+-A INPUT -m iprange --src-range 95.175.0.0-95.175.143.255 -j DROP
+-A INPUT -m iprange --src-range 95.175.146.0-95.175.152.255 -j DROP
+-A INPUT -m iprange --src-range 95.175.154.0-95.175.159.255 -j DROP
+-A INPUT -m iprange --src-range 95.175.192.0-95.175.255.255 -j DROP
 -A INPUT -m iprange --src-range 95.178.0.0-95.178.87.255 -j DROP
 -A INPUT -m iprange --src-range 95.178.92.0-95.178.107.255 -j DROP
 -A INPUT -m iprange --src-range 95.178.112.0-95.178.255.255 -j DROP
@@ -5140,6 +5321,7 @@
 -A INPUT -s 109.202.0.0/16 -j DROP
 -A INPUT -s 109.204.0.0/16 -j DROP
 -A INPUT -s 109.207.0.0/16 -j DROP
+-A INPUT -s 109.222.233.92/32 -j DROP
 -A INPUT -s 109.224.0.0/15 -j DROP
 -A INPUT -s 109.226.0.0/15 -j DROP
 -A INPUT -s 109.228.0.0/15 -j DROP
@@ -5180,6 +5362,7 @@
 -A INPUT -s 109.84.0.0/15 -j DROP
 -A INPUT -s 109.86.0.0/15 -j DROP
 -A INPUT -s 109.88.0.0/15 -j DROP
+-A INPUT -s 109.9.44.38/15 -j DROP
 -A INPUT -s 109.90.0.0/15 -j DROP
 -A INPUT -s 109.92.0.0/15 -j DROP
 -A INPUT -s 109.95.0.0/16 -j DROP
@@ -5346,9 +5529,9 @@
 -A INPUT -s 130.94.0.0/14 -j DROP
 -A INPUT -s 130.99.0.0/16 -j DROP
 #CEA : 165->169
-#-A INPUT -s 132.165.0.0/16 -j DROP
-#-A INPUT -s 132.166.0.0/15 -j DROP
-#-A INPUT -s 132.168.0.0/15 -j DROP
+-A INPUT -s 132.165.0.0/16 -j DROP
+-A INPUT -s 132.166.0.0/15 -j DROP
+-A INPUT -s 132.168.0.0/15 -j DROP
 -A INPUT -s 133.0.0.0/8 -j DROP
 -A INPUT -s 135.125.75.23/32 -j DROP
 -A INPUT -s 136.0.0.0/8 -j DROP
@@ -5756,6 +5939,7 @@
 -A INPUT -s 176.141.176.52/32 -j DROP
 -A INPUT -s 176.148.132.25/32 -j DROP
 -A INPUT -s 176.150.5.63/32 -j DROP
+-A INPUT -s 176.151.227.158/32 -j DROP
 -A INPUT -s 176.16.0.0/15 -j DROP
 -A INPUT -s 176.160.154.7/32 -j DROP
 -A INPUT -s 176.162.74.48/32 -j DROP
@@ -5885,8 +6069,8 @@
 #Tor RS +
 -A INPUT -s 178.220.0.0/14 -j DROP
 -A INPUT -s 178.224.0.0/13 -j DROP
--A INPUT -s 178.230.0.0/15 -j DROP
 -A INPUT -s 178.232.0.0/14 -j DROP
+-A INPUT -s 178.236.0.0/16 -j DROP
 -A INPUT -s 178.24.0.0/14 -j DROP
 -A INPUT -s 178.240.0.0/13 -j DROP
 -A INPUT -s 178.252.0.0/15 -j DROP
@@ -6057,7 +6241,8 @@
 -A INPUT -s 188.36.0.0/15 -j DROP
 -A INPUT -s 188.38.0.0/14 -j DROP
 -A INPUT -s 188.4.0.0/15 -j DROP
--A INPUT -s 188.42.0.0/16 -j DROP
+-A INPUT -s 188.40.0.0/15 -j DROP
+-A INPUT -s 188.42.0.0/15 -j DROP
 -A INPUT -s 188.44.0.0/15 -j DROP
 -A INPUT -s 188.46.0.0/15 -j DROP
 -A INPUT -s 188.48.0.0/13 -j DROP
@@ -6067,7 +6252,7 @@
 -A INPUT -s 188.67.0.0/16 -j DROP
 -A INPUT -s 188.68.0.0/15 -j DROP
 -A INPUT -s 188.70.0.0/15 -j DROP
--A INPUT -s 188.75.0.0/16 -j DROP
+-A INPUT -s 188.74.0.0/15 -j DROP
 -A INPUT -s 188.76.0.0/14 -j DROP
 -A INPUT -s 188.8.0.0/13 -j DROP
 -A INPUT -s 188.80.0.0/14 -j DROP
@@ -6116,9 +6301,10 @@
 -A INPUT -s 192.162.71.0/24 -j DROP
 -A INPUT -s 192.163.0.0/16 -j DROP
 -A INPUT -s 192.164.0.0/15 -j DROP
+-A INPUT -s 192.167.0.0/16 -j DROP
 -A INPUT -s 192.169.0.0/16 -j DROP
 -A INPUT -s 192.170.0.0/16 -j DROP
--A INPUT -s 192.172.0.0/16 -j DROP
+-A INPUT -s 192.172.0.0/15 -j DROP
 -A INPUT -s 192.174.0.0/15 -j DROP
 -A INPUT -s 192.176.0.0/15 -j DROP
 -A INPUT -s 192.178.0.0/15 -j DROP
@@ -6233,7 +6419,14 @@
 -A INPUT -s 193.140.0.0/15 -j DROP
 -A INPUT -s 193.143.0.0/16 -j DROP
 -A INPUT -s 193.144.0.0/14 -j DROP
+-A INPUT -s 193.152.0.0/15 -j DROP
+-A INPUT -s 193.154.0.0/15 -j DROP
+-A INPUT -s 193.156.0.0/15 -j DROP
+-A INPUT -s 193.158.0.0/15 -j DROP
 -A INPUT -s 193.165.0.0/16 -j DROP
+-A INPUT -s 193.166.0.0/15 -j DROP
+-A INPUT -s 193.170.0.0/15 -j DROP
+-A INPUT -s 193.172.0.0/15 -j DROP
 -A INPUT -s 193.174.0.0/15 -j DROP
 -A INPUT -s 193.177.182.53/32 -j DROP
 -A INPUT -s 193.178.169.0/24 -j DROP
@@ -6242,15 +6435,21 @@
 -A INPUT -s 193.179.0.0/16 -j DROP
 -A INPUT -s 193.180.0.0/15 -j DROP
 -A INPUT -s 193.182.0.0/15 -j DROP
+-A INPUT -s 193.184.0.0/15 -j DROP
 -A INPUT -s 193.187.0.0/16 -j DROP
 -A INPUT -s 193.190.0.0/15 -j DROP
 -A INPUT -s 193.192.0.0/15 -j DROP
+-A INPUT -s 193.195.0.0/16 -j DROP
+-A INPUT -s 193.196.0.0/15 -j DROP
+-A INPUT -s 193.198.0.0/15 -j DROP
 -A INPUT -s 193.2.0.0/16 -j DROP
+-A INPUT -s 193.204.0.0/15 -j DROP
 -A INPUT -s 193.206.0.0/15 -j DROP
 -A INPUT -s 193.208.0.0/15 -j DROP
 -A INPUT -s 193.210.0.0/15 -j DROP
 -A INPUT -s 193.212.0.0/15 -j DROP
 -A INPUT -s 193.214.0.0/15 -j DROP
+-A INPUT -s 193.216.0.0/15 -j DROP
 -A INPUT -s 193.224.0.0/15 -j DROP
 -A INPUT -s 193.226.0.0/16 -j DROP
 -A INPUT -s 193.228.155.0/24 -j DROP
@@ -6262,10 +6461,11 @@
 -A INPUT -s 193.24.0.0/16 -j DROP
 -A INPUT -s 193.240.0.0/15 -j DROP
 -A INPUT -s 193.242.0.0/16 -j DROP
+-A INPUT -s 193.244.0.0/15 -j DROP
 -A INPUT -s 193.248.201.68/32 -j DROP
 -A INPUT -s 193.248.59.47/32 -j DROP
 -A INPUT -s 193.250.50.162/32 -j DROP
--A INPUT -s 193.252.16.0/24 -j DROP
+-A INPUT -s 193.252.16.0/23 -j DROP
 -A INPUT -s 193.252.172.201/32 -j DROP
 -A INPUT -s 193.254.0.0/15 -j DROP
 -A INPUT -s 193.31.0.0/16 -j DROP
@@ -6316,7 +6516,6 @@
 -A INPUT -s 194.12.0.0/16 -j DROP
 -A INPUT -s 194.120.0.0/15 -j DROP
 -A INPUT -s 194.123.0.0/16 -j DROP
--A INPUT -s 194.126.177.0/24 -j DROP
 -A INPUT -s 194.128.0.0/14 -j DROP
 -A INPUT -s 194.134.0.0/15 -j DROP
 -A INPUT -s 194.136.0.0/15 -j DROP
@@ -6336,6 +6535,7 @@
 -A INPUT -s 194.167.15.238/32 -j DROP
 -A INPUT -s 194.170.0.0/15 -j DROP
 -A INPUT -s 194.172.0.0/14 -j DROP
+-A INPUT -s 194.176.0.0/16 -j DROP
 -A INPUT -s 194.178.0.0/15 -j DROP
 -A INPUT -s 194.18.0.0/16 -j DROP
 -A INPUT -s 194.181.0.0/16 -j DROP
@@ -6398,12 +6598,12 @@
 -A INPUT -s 194.90.0.0/13 -j DROP
 -A INPUT -s 194.98.0.0/16 -j DROP
 -A INPUT -s 195.0.0.0/15 -j DROP
+-A INPUT -s 195.10.0.0/15 -j DROP
+-A INPUT -s 195.100.0.0/16 -j DROP
 -A INPUT -s 195.101.82.253/32 -j DROP
 -A INPUT -s 195.102.0.0/13 -j DROP
--A INPUT -s 195.11.0.0/16 -j DROP
 -A INPUT -s 195.111.0.0/16 -j DROP
--A INPUT -s 195.113.0.0/16 -j DROP
--A INPUT -s 195.114.128.0/17 -j DROP
+-A INPUT -s 195.112.0.0/15 -j DROP
 -A INPUT -s 195.116.0.0/15 -j DROP
 -A INPUT -s 195.119.0.0/16 -j DROP
 -A INPUT -s 195.120.0.0/15 -j DROP
@@ -6425,9 +6625,10 @@
 #Scaleway +
 -A INPUT -s 195.154.0.0/15 -j DROP
 -A INPUT -s 195.156.0.0/15 -j DROP
+-A INPUT -s 195.159.0.0/16 -j DROP
 -A INPUT -s 195.16.0.0/15 -j DROP
 -A INPUT -s 195.161.0.0/16 -j DROP
--A INPUT -s 195.163.0.0/16 -j DROP
+-A INPUT -s 195.162.0.0/15 -j DROP
 -A INPUT -s 195.164.0.0/15 -j DROP
 -A INPUT -s 195.166.0.0/16 -j DROP
 -A INPUT -s 195.167.0.0/17 -j DROP
@@ -6463,13 +6664,12 @@
 -A INPUT -s 195.216.142.60/32 -j DROP
 -A INPUT -s 195.217.0.0/16 -j DROP
 -A INPUT -s 195.218.0.0/15 -j DROP
--A INPUT -s 195.22.8.72/32 -j DROP
+-A INPUT -s 195.22.0.0/15 -j DROP
 -A INPUT -s 195.220.50.2/32 -j DROP
 -A INPUT -s 195.223.0.0/16 -j DROP
 -A INPUT -s 195.224.0.0/16 -j DROP
 -A INPUT -s 195.227.0.0/16 -j DROP
 -A INPUT -s 195.228.0.0/15 -j DROP
--A INPUT -s 195.23.0.0/16 -j DROP
 -A INPUT -s 195.230.0.0/15 -j DROP
 -A INPUT -s 195.233.0.0/16 -j DROP
 -A INPUT -s 195.235.0.0/16 -j DROP
@@ -6486,9 +6686,10 @@
 -A INPUT -s 195.251.0.0/16 -j DROP
 -A INPUT -s 195.252.0.0/15 -j DROP
 -A INPUT -s 195.255.0.0/16 -j DROP
+-A INPUT -s 195.27.0.0/16 -j DROP
 -A INPUT -s 195.29.0.0/16 -j DROP
 -A INPUT -s 195.30.0.0/15 -j DROP
--A INPUT -s 195.32.0.0/16 -j DROP
+-A INPUT -s 195.32.0.0/15 -j DROP
 -A INPUT -s 195.37.0.0/16 -j DROP
 -A INPUT -s 195.41.0.0/16 -j DROP
 -A INPUT -s 195.42.148.160/32 -j DROP
@@ -6505,7 +6706,6 @@
 -A INPUT -s 195.69.0.0/16 -j DROP
 -A INPUT -s 195.71.0.0/16 -j DROP
 -A INPUT -s 195.73.0.0/16 -j DROP
--A INPUT -s 195.74.72.0/24 -j DROP
 -A INPUT -s 195.76.0.0/15 -j DROP
 -A INPUT -s 195.81.0.0/16 -j DROP
 -A INPUT -s 195.82.0.0/16 -j DROP
@@ -6513,8 +6713,8 @@
 -A INPUT -s 195.86.0.0/15 -j DROP
 -A INPUT -s 195.89.0.0/16 -j DROP
 -A INPUT -s 195.9.0.0/16 -j DROP
+-A INPUT -s 195.91.0.0/16 -j DROP
 -A INPUT -s 195.92.0.0/15 -j DROP
--A INPUT -s 195.95.0.0/17 -j DROP
 -A INPUT -s 196.0.0.0/7 -j DROP
 -A INPUT -s 199.0.0.0/14 -j DROP
 -A INPUT -s 199.10.0.0/15 -j DROP
@@ -6533,16 +6733,31 @@
 -A INPUT -s 199.164.0.0/15 -j DROP
 -A INPUT -s 199.166.0.0/15 -j DROP
 -A INPUT -s 199.168.0.0/15 -j DROP
+-A INPUT -s 199.170.0.0/15 -j DROP
+-A INPUT -s 199.172.0.0/15 -j DROP
+-A INPUT -s 199.174.0.0/15 -j DROP
+-A INPUT -s 199.176.0.0/15 -j DROP
+-A INPUT -s 199.178.0.0/15 -j DROP
 -A INPUT -s 199.180.0.0/15 -j DROP
 -A INPUT -s 199.182.0.0/16 -j DROP
+-A INPUT -s 199.184.0.0/15 -j DROP
 -A INPUT -s 199.186.0.0/15 -j DROP
 -A INPUT -s 199.189.0.0/16 -j DROP
 -A INPUT -s 199.18.0.0/15 -j DROP
+-A INPUT -s 199.190.0.0/15 -j DROP
 -A INPUT -s 199.192.0.0/15 -j DROP
 -A INPUT -s 199.194.0.0/15 -j DROP
+-A INPUT -s 199.196.0.0/15 -j DROP
+-A INPUT -s 199.198.0.0/15 -j DROP
 -A INPUT -s 199.20.0.0/15 -j DROP
+-A INPUT -s 199.200.0.0/15 -j DROP
 -A INPUT -s 199.202.0.0/15 -j DROP
 -A INPUT -s 199.204.0.0/15 -j DROP
+-A INPUT -s 199.206.0.0/15 -j DROP
+-A INPUT -s 199.208.0.0/15 -j DROP
+-A INPUT -s 199.210.0.0/15 -j DROP
+-A INPUT -s 199.212.0.0/15 -j DROP
+-A INPUT -s 199.214.0.0/15 -j DROP
 -A INPUT -s 199.216.0.0/15 -j DROP
 -A INPUT -s 199.218.0.0/15 -j DROP
 -A INPUT -s 199.220.0.0/15 -j DROP
@@ -6615,6 +6830,8 @@
 -A INPUT -s 20.182.0.0/15 -j DROP
 -A INPUT -s 20.184.0.0/13 -j DROP
 -A INPUT -s 20.192.0.0/10 -j DROP
+-A INPUT -s 20.32.0.0/15 -j DROP
+-A INPUT -s 20.34.0.0/15 -j DROP
 -A INPUT -s 20.36.0.0/14 -j DROP
 -A INPUT -s 20.40.0.0/13 -j DROP
 -A INPUT -s 20.48.0.0/12 -j DROP
@@ -6651,17 +6868,16 @@
 -A INPUT -s 212.142.0.0/15 -j DROP
 -A INPUT -s 212.144.0.0/15 -j DROP
 -A INPUT -s 212.147.0.0/16 -j DROP
--A INPUT -s 212.148.0.0/16 -j DROP
--A INPUT -s 212.150.0.0/16 -j DROP
--A INPUT -s 212.153.0.0/16 -j DROP
+-A INPUT -s 212.148.0.0/15 -j DROP
+-A INPUT -s 212.150.0.0/15 -j DROP
+-A INPUT -s 212.152.0.0/15 -j DROP
 #Tor TR
 -A INPUT -s 212.154.0.0/16 -j DROP
 -A INPUT -s 212.156.0.0/16 -j DROP
 -A INPUT -s 212.158.0.0/15 -j DROP
 -A INPUT -s 212.16.0.0/15 -j DROP
--A INPUT -s 212.160.0.0/16 -j DROP
--A INPUT -s 212.162.152.0/24 -j DROP
--A INPUT -s 212.163.0.0/16 -j DROP
+-A INPUT -s 212.160.0.0/15 -j DROP
+-A INPUT -s 212.162.0.0/15 -j DROP
 -A INPUT -s 212.164.0.0/15 -j DROP
 -A INPUT -s 212.166.0.0/15 -j DROP
 -A INPUT -s 212.168.0.0/15 -j DROP
@@ -6671,6 +6887,7 @@
 -A INPUT -s 212.176.0.0/15 -j DROP
 -A INPUT -s 212.178.0.0/15 -j DROP
 -A INPUT -s 212.181.0.0/16 -j DROP
+-A INPUT -s 212.182.0.0/15 -j DROP
 -A INPUT -s 212.184.0.0/15 -j DROP
 -A INPUT -s 212.186.0.0/15 -j DROP
 -A INPUT -s 212.188.0.0/15 -j DROP
@@ -6692,8 +6909,8 @@
 -A INPUT -s 212.216.0.0/15 -j DROP
 -A INPUT -s 212.218.0.0/15 -j DROP
 -A INPUT -s 212.22.0.0/16 -j DROP
--A INPUT -s 212.220.0.0/16 -j DROP
--A INPUT -s 212.223.0.0/16 -j DROP
+-A INPUT -s 212.220.0.0/15 -j DROP
+-A INPUT -s 212.222.0.0/15 -j DROP
 -A INPUT -s 212.224.0.0/15 -j DROP
 -A INPUT -s 212.226.0.0/15 -j DROP
 -A INPUT -s 212.228.0.0/15 -j DROP
@@ -6702,7 +6919,7 @@
 -A INPUT -s 212.232.0.0/15 -j DROP
 -A INPUT -s 212.235.0.0/16 -j DROP
 -A INPUT -s 212.236.0.0/15 -j DROP
--A INPUT -s 212.238.0.0/16 -j DROP
+-A INPUT -s 212.238.0.0/15 -j DROP
 #Tor LT
 -A INPUT -s 212.240.0.0/15 -j DROP
 -A INPUT -s 212.242.0.0/15 -j DROP
@@ -6710,7 +6927,7 @@
 -A INPUT -s 212.246.0.0/15 -j DROP
 -A INPUT -s 212.248.0.0/15 -j DROP
 -A INPUT -s 212.25.0.0/16 -j DROP
--A INPUT -s 212.250.0.0/16 -j DROP
+-A INPUT -s 212.250.0.0/15 -j DROP
 -A INPUT -s 212.252.0.0/15 -j DROP
 -A INPUT -s 212.254.0.0/15 -j DROP
 -A INPUT -s 212.26.0.0/16 -j DROP
@@ -6727,6 +6944,7 @@
 -A INPUT -s 212.47.0.0/16 -j DROP
 -A INPUT -s 212.48.0.0/15 -j DROP
 -A INPUT -s 212.50.0.0/16 -j DROP
+-A INPUT -s 212.53.0.0/16 -j DROP
 -A INPUT -s 212.54.0.0/15 -j DROP
 -A INPUT -s 212.56.0.0/15 -j DROP
 -A INPUT -s 212.58.0.0/15 -j DROP
@@ -6734,7 +6952,7 @@
 -A INPUT -s 212.63.0.0/16 -j DROP
 -A INPUT -s 212.64.0.0/15 -j DROP
 -A INPUT -s 212.66.0.0/15 -j DROP
--A INPUT -s 212.68.0.0/16 -j DROP
+-A INPUT -s 212.68.0.0/15 -j DROP
 -A INPUT -s 212.7.0.0/16 -j DROP
 -A INPUT -s 212.70.0.0/15 -j DROP
 -A INPUT -s 212.72.0.0/15 -j DROP
@@ -6754,6 +6972,7 @@
 -A INPUT -s 212.93.0.0/16 -j DROP
 -A INPUT -s 212.96.0.0/15 -j DROP
 -A INPUT -s 212.98.0.0/16 -j DROP
+-A INPUT -s 212.99.128.0/17 -j DROP
 -A INPUT -s 213.0.0.0/14 -j DROP
 -A INPUT -s 213.10.0.0/16 -j DROP
 -A INPUT -s 213.100.0.0/14 -j DROP
@@ -6779,7 +6998,7 @@
 -A INPUT -s 213.146.0.0/15 -j DROP
 -A INPUT -s 213.148.0.0/15 -j DROP
 -A INPUT -s 213.150.0.0/16 -j DROP
--A INPUT -s 213.153.0.0/16 -j DROP
+-A INPUT -s 213.152.0.0/15 -j DROP
 -A INPUT -s 213.154.0.0/15 -j DROP
 -A INPUT -s 213.157.0.0/16 -j DROP
 -A INPUT -s 213.158.0.0/16 -j DROP
@@ -6792,6 +7011,7 @@
 -A INPUT -s 213.172.0.0/16 -j DROP
 -A INPUT -s 213.175.0.0/16 -j DROP
 -A INPUT -s 213.177.0.0/16 -j DROP
+-A INPUT -s 213.179.0.0/16 -j DROP
 -A INPUT -s 213.18.0.0/16 -j DROP
 #Inclut Eutelsat
 -A INPUT -s 213.180.0.0/15 -j DROP
@@ -6815,8 +7035,10 @@
 -A INPUT -s 213.214.0.0/16 -j DROP
 -A INPUT -s 213.216.0.0/16 -j DROP
 -A INPUT -s 213.219.0.0/16 -j DROP
+-A INPUT -s 213.220.0.0/15 -j DROP
 -A INPUT -s 213.224.0.0/16 -j DROP
 -A INPUT -s 213.227.0.0/16 -j DROP
+-A INPUT -s 213.229.0.0/16 -j DROP
 -A INPUT -s 213.230.0.0/15 -j DROP
 -A INPUT -s 213.233.0.0/16 -j DROP
 -A INPUT -s 213.234.0.0/15 -j DROP
@@ -6839,7 +7061,7 @@
 -A INPUT -s 213.33.0.0/16 -j DROP
 -A INPUT -s 213.34.0.0/15 -j DROP
 -A INPUT -s 213.37.0.0/16 -j DROP
--A INPUT -s 213.38.0.0/16 -j DROP
+-A INPUT -s 213.38.0.0/15 -j DROP
 -A INPUT -s 213.4.0.0/16 -j DROP
 -A INPUT -s 213.40.0.0/16 -j DROP
 -A INPUT -s 213.41.0.0/17 -j DROP
@@ -6898,6 +7120,7 @@
 -A INPUT -s 217.136.0.0/15 -j DROP
 -A INPUT -s 217.138.0.0/15 -j DROP
 -A INPUT -s 217.140.0.0/15 -j DROP
+-A INPUT -s 217.14.0.0/16 -j DROP
 -A INPUT -s 217.142.0.0/15 -j DROP
 -A INPUT -s 217.145.0.0/16 -j DROP
 -A INPUT -s 217.148.0.0/15 -j DROP
@@ -7049,7 +7272,7 @@
 -A INPUT -s 31.92.0.0/16 -j DROP
 -A INPUT -s 31.94.0.0/16 -j DROP
 -A INPUT -s 31.96.0.0/15 -j DROP
--A INPUT -s 31.99.0.0/16 -j DROP
+-A INPUT -s 31.98.0.0/15 -j DROP
 -A INPUT -s 34.0.0.0/7 -j DROP
 #Tor TW+
 -A INPUT -s 36.0.0.0/8 -j DROP
@@ -7151,7 +7374,9 @@
 -A INPUT -s 37.65.6.144/32 -j DROP
 -A INPUT -s 37.65.6.83/32 -j DROP
 -A INPUT -s 37.65.8.237/32 -j DROP
+-A INPUT -s 37.67.101.31/32 -j DROP
 -A INPUT -s 37.67.81.26/32 -j DROP
+-A INPUT -s 37.67.94.124/32 -j DROP
 -A INPUT -s 37.70.221.136/32 -j DROP
 -A INPUT -s 37.73.0.0/16 -j DROP
 -A INPUT -s 37.74.0.0/15 -j DROP
@@ -7447,13 +7672,14 @@
 -A INPUT -s 46.23.242.0/24 -j DROP
 -A INPUT -s 46.23.245.0/24 -j DROP
 -A INPUT -s 46.23.249.0/24 -j DROP
+-A INPUT -s 46.230.0.0/16 -j DROP
 -A INPUT -s 46.232.0.0/15 -j DROP
 -A INPUT -s 46.234.0.0/16 -j DROP
 -A INPUT -s 46.236.0.0/15 -j DROP
 -A INPUT -s 46.238.0.0/15 -j DROP
 -A INPUT -s 46.24.0.0/14 -j DROP
--A INPUT -s 46.242.0.0/16 -j DROP
 -A INPUT -s 46.240.0.0/15 -j DROP
+-A INPUT -s 46.242.0.0/16 -j DROP
 -A INPUT -s 46.244.0.0/16 -j DROP
 -A INPUT -s 46.246.0.0/16 -j DROP
 -A INPUT -s 46.248.0.0/16 -j DROP
@@ -7501,6 +7727,7 @@
 -A INPUT -s 5.12.0.0/14 -j DROP
 -A INPUT -s 5.122.0.0/15 -j DROP
 -A INPUT -s 5.128.0.0/14 -j DROP
+-A INPUT -s 5.132.0.0/16 -j DROP
 #Tor FR OVH
 -A INPUT -s 5.135.0.0/16 -j DROP
 -A INPUT -s 5.136.0.0/13 -j DROP
@@ -7565,11 +7792,13 @@
 -A INPUT -s 5.40.0.0/15 -j DROP
 -A INPUT -s 5.43.0.0/16 -j DROP
 -A INPUT -s 5.46.0.0/15 -j DROP
+-A INPUT -s 5.49.138.224/32 -j DROP
 -A INPUT -s 5.50.136.201/32 -j DROP
 -A INPUT -s 5.52.0.0/15 -j DROP
 -A INPUT -s 5.54.0.0/15 -j DROP
 -A INPUT -s 5.57.0.0/16 -j DROP
 -A INPUT -s 5.58.0.0/15 -j DROP
+-A INPUT -s 5.60.0.0/16 -j DROP
 -A INPUT -s 5.62.0.0/16 -j DROP
 -A INPUT -s 5.64.0.0/13 -j DROP
 -A INPUT -s 5.72.0.0/15 -j DROP
@@ -7627,6 +7856,7 @@
 -A INPUT -s 50.94.0.0/15 -j DROP
 -A INPUT -s 50.96.0.0/15 -j DROP
 -A INPUT -s 50.98.0.0/15 -j DROP
+-A INPUT -s 51.0.0.0/15 -j DROP
 -A INPUT -s 51.10.0.0/15 -j DROP
 -A INPUT -s 51.100.0.0/15 -j DROP
 -A INPUT -s 51.102.0.0/15 -j DROP
@@ -7672,6 +7902,7 @@
 -A INPUT -s 51.174.0.0/15 -j DROP
 -A INPUT -s 51.176.0.0/15 -j DROP
 -A INPUT -s 51.179.0.0/15 -j DROP
+-A INPUT -s 51.18.0.0/15 -j DROP
 -A INPUT -s 51.180.0.0/15 -j DROP
 -A INPUT -s 51.182.0.0/15 -j DROP
 -A INPUT -s 51.184.0.0/15 -j DROP
@@ -7683,6 +7914,7 @@
 -A INPUT -s 51.194.0.0/15 -j DROP
 -A INPUT -s 51.196.0.0/15 -j DROP
 -A INPUT -s 51.198.0.0/15 -j DROP
+-A INPUT -s 51.2.0.0/15 -j DROP
 -A INPUT -s 51.20.0.0/15 -j DROP
 -A INPUT -s 51.200.0.0/15 -j DROP
 -A INPUT -s 51.202.0.0/15 -j DROP
@@ -7695,6 +7927,7 @@
 -A INPUT -s 51.214.0.0/15 -j DROP
 -A INPUT -s 51.216.0.0/15 -j DROP
 -A INPUT -s 51.218.0.0/15 -j DROP
+-A INPUT -s 51.22.0.0/15 -j DROP
 -A INPUT -s 51.220.0.0/15 -j DROP
 #Tor FR OVH +
 -A INPUT -s 51.222.0.0/15 -j DROP
@@ -7721,6 +7954,7 @@
 -A INPUT -s 51.36.0.0/15 -j DROP
 #Tor FR OVH
 -A INPUT -s 51.38.0.0/15 -j DROP
+-A INPUT -s 51.4.0.0/15 -j DROP
 -A INPUT -s 51.40.0.0/15 -j DROP
 -A INPUT -s 51.42.0.0/15 -j DROP
 -A INPUT -s 51.44.0.0/14 -j DROP
@@ -7729,6 +7963,7 @@
 -A INPUT -s 51.52.0.0/15 -j DROP
 -A INPUT -s 51.54.0.0/15 -j DROP
 -A INPUT -s 51.56.0.0/14 -j DROP
+-A INPUT -s 51.6.0.0/15 -j DROP
 -A INPUT -s 51.60.0.0/15 -j DROP
 -A INPUT -s 51.62.0.0/15 -j DROP
 -A INPUT -s 51.64.0.0/15 -j DROP
@@ -7760,9 +7995,7 @@
 #M$+Amazon 
 -A INPUT -s 52.0.0.0/7 -j DROP
 -A INPUT -s 54.0.0.0/7 -j DROP
--A INPUT -s 56.124.0.0/15 -j DROP
--A INPUT -s 56.154.0.0/15 -j DROP
--A INPUT -s 56.228.0.0/16 -j DROP
+-A INPUT -s 56.0.0.0/8 -j DROP
 -A INPUT -s 57.0.0.0/10 -j DROP
 -A INPUT -s 57.100.0.0/15 -j DROP
 -A INPUT -s 57.102.0.0/15 -j DROP
@@ -7951,6 +8184,7 @@
 -A INPUT -s 77.16.0.0/12 -j DROP
 -A INPUT -s 77.160.0.0/12 -j DROP
 -A INPUT -s 77.176.0.0/12 -j DROP
+-A INPUT -s 77.194.228.64/32 -j DROP
 -A INPUT -s 77.208.0.0/14 -j DROP
 -A INPUT -s 77.212.0.0/14 -j DROP
 -A INPUT -s 77.216.0.0/14 -j DROP
@@ -7963,6 +8197,7 @@
 -A INPUT -s 77.238.0.0/15 -j DROP
 -A INPUT -s 77.241.0.0/16 -j DROP
 -A INPUT -s 77.242.0.0/15 -j DROP
+-A INPUT -s 77.244.0.0/16 -j DROP
 -A INPUT -s 77.248.0.0/14 -j DROP
 -A INPUT -s 77.252.0.0/14 -j DROP
 -A INPUT -s 77.28.0.0/15 -j DROP
@@ -8006,6 +8241,7 @@
 -A INPUT -s 78.108.0.0/16 -j DROP
 -A INPUT -s 78.110.0.0/15 -j DROP
 -A INPUT -s 78.12.0.0/14 -j DROP
+-A INPUT -s 78.124.155.80/32 -j DROP
 -A INPUT -s 78.128.0.0/15 -j DROP
 -A INPUT -s 78.130.0.0/15 -j DROP
 -A INPUT -s 78.132.0.0/15 -j DROP
@@ -8114,7 +8350,7 @@
 -A INPUT -s 80.246.0.0/16 -j DROP
 -A INPUT -s 80.249.0.0/16 -j DROP
 -A INPUT -s 80.250.0.0/16 -j DROP
--A INPUT -s 80.253.0.0/16 -j DROP
+-A INPUT -s 80.252.0.0/15 -j DROP
 -A INPUT -s 80.254.0.0/15 -j DROP
 -A INPUT -s 80.26.0.0/15 -j DROP
 -A INPUT -s 80.28.0.0/15 -j DROP
@@ -8144,6 +8380,7 @@
 -A INPUT -s 80.88.0.0/16 -j DROP
 -A INPUT -s 80.90.0.0/16 -j DROP
 -A INPUT -s 80.92.0.0/16 -j DROP
+-A INPUT -s 80.95.0.0/16 -j DROP
 #Tor RO+
 -A INPUT -s 80.96.0.0/15 -j DROP
 -A INPUT -s 80.98.0.0/15 -j DROP
@@ -8222,10 +8459,14 @@
 -A INPUT -s 81.40.0.0/15 -j DROP
 -A INPUT -s 81.42.0.0/15 -j DROP
 -A INPUT -s 81.44.0.0/15 -j DROP
+-A INPUT -s 81.46.0.0/15 -j DROP
 #Tor FR Scaleway +
 -A INPUT -s 81.56.0.0/15 -j DROP
+-A INPUT -s 81.58.0.0/15 -j DROP
 -A INPUT -s 81.6.0.0/15 -j DROP
 -A INPUT -s 81.60.0.0/15 -j DROP
+-A INPUT -s 81.62.0.0/15 -j DROP
+-A INPUT -s 81.65.134.54/32 -j DROP
 -A INPUT -s 81.65.148.97/32 -j DROP
 -A INPUT -s 81.68.0.0/15 -j DROP
 -A INPUT -s 81.70.0.0/15 -j DROP
@@ -8235,7 +8476,9 @@
 -A INPUT -s 81.8.0.0/15 -j DROP
 -A INPUT -s 81.81.0.0/16 -j DROP
 -A INPUT -s 81.82.0.0/15 -j DROP
+-A INPUT -s 81.84.0.0/16 -j DROP
 -A INPUT -s 81.86.0.0/15 -j DROP
+-A INPUT -s 81.89.0.0/16 -j DROP
 -A INPUT -s 81.90.0.0/16 -j DROP
 -A INPUT -s 81.94.0.0/15 -j DROP
 -A INPUT -s 81.96.0.0/15 -j DROP
@@ -8269,7 +8512,7 @@
 #-A INPUT -s 82.152.0.0/15 -j DROP
 -A INPUT -s 82.154.0.0/15 -j DROP
 -A INPUT -s 82.156.0.0/15 -j DROP
--A INPUT -s 82.159.0.0/16 -j DROP
+-A INPUT -s 82.158.0.0/15 -j DROP
 -A INPUT -s 82.16.0.0/14 -j DROP
 -A INPUT -s 82.160.0.0/16 -j DROP
 -A INPUT -s 82.162.0.0/16 -j DROP
@@ -8301,6 +8544,9 @@
 -A INPUT -s 82.22.0.0/14 -j DROP
 -A INPUT -s 82.220.0.0/15 -j DROP
 -A INPUT -s 82.222.0.0/15 -j DROP
+-A INPUT -s 82.228.244.160/32 -j DROP
+-A INPUT -s 82.228.244.169/32 -j DROP
+-A INPUT -s 82.229.218.13/32 -j DROP
 #Serverd+
 -A INPUT -s 82.24.0.0/14 -j DROP
 -A INPUT -s 82.28.0.0/15 -j DROP
@@ -8321,6 +8567,7 @@
 -A INPUT -s 82.64.157.6/32 -j DROP
 #CCM
 #-A INPUT -s 82.65.140.16/32 -j DROP
+-A INPUT -s 82.65.161.209/32 -j DROP
 -A INPUT -s 82.65.171.77/32 -j DROP
 -A INPUT -s 82.65.181.122/32 -j DROP
 -A INPUT -s 82.65.193.245/32 -j DROP
@@ -8345,7 +8592,11 @@
 -A INPUT -s 82.86.0.0/15 -j DROP
 -A INPUT -s 82.88.0.0/14 -j DROP
 -A INPUT -s 82.92.0.0/14 -j DROP
+-A INPUT -s 82.96.135.115/32 -j DROP
+-A INPUT -s 82.99.0.0/16 -j DROP
 -A INPUT -s 83.0.0.0/11 -j DROP
+-A INPUT -s 83.100.0.0/15 -j DROP
+-A INPUT -s 83.102.0.0/15 -j DROP
 -A INPUT -s 83.104.0.0/14 -j DROP
 -A INPUT -s 83.108.0.0/15 -j DROP
 -A INPUT -s 83.110.0.0/15 -j DROP
@@ -8358,6 +8609,7 @@
 -A INPUT -s 83.128.0.0/13 -j DROP
 -A INPUT -s 83.139.0.0/16 -j DROP
 -A INPUT -s 83.140.0.0/16 -j DROP
+-A INPUT -s 83.141.0.0/17 -j DROP
 #Tor IQ
 -A INPUT -s 83.146.0.0/15 -j DROP
 -A INPUT -s 83.148.0.0/15 -j DROP
@@ -8382,6 +8634,7 @@
 -A INPUT -s 83.224.0.0/15 -j DROP
 -A INPUT -s 83.226.0.0/15 -j DROP
 -A INPUT -s 83.228.0.0/16 -j DROP
+-A INPUT -s 83.230.0.0/15 -j DROP
 -A INPUT -s 83.232.0.0/15 -j DROP
 -A INPUT -s 83.234.0.0/15 -j DROP
 -A INPUT -s 83.236.0.0/15 -j DROP
@@ -8398,6 +8651,8 @@
 -A INPUT -s 83.69.0.0/16 -j DROP
 -A INPUT -s 83.70.0.0/15 -j DROP
 -A INPUT -s 83.72.0.0/14 -j DROP
+-A INPUT -s 83.76.0.0/15 -j DROP
+-A INPUT -s 83.78.0.0/15 -j DROP
 -A INPUT -s 83.80.0.0/13 -j DROP
 -A INPUT -s 83.88.0.0/13 -j DROP
 -A INPUT -s 83.96.0.0/16 -j DROP
@@ -8431,7 +8686,7 @@
 -A INPUT -s 84.220.0.0/15 -j DROP
 -A INPUT -s 84.222.0.0/15 -j DROP
 -A INPUT -s 84.224.0.0/15 -j DROP
--A INPUT -s 84.227.0.0/16 -j DROP
+-A INPUT -s 84.226.0.0/15 -j DROP
 -A INPUT -s 84.228.0.0/15 -j DROP
 -A INPUT -s 84.230.0.0/15 -j DROP
 -A INPUT -s 84.232.0.0/15 -j DROP
@@ -8447,7 +8702,7 @@
 -A INPUT -s 84.244.0.0/15 -j DROP
 -A INPUT -s 84.248.0.0/14 -j DROP
 -A INPUT -s 84.252.0.0/15 -j DROP
--A INPUT -s 84.255.0.0/16 -j DROP
+-A INPUT -s 84.254.0.0/15 -j DROP
 -A INPUT -s 84.28.0.0/14 -j DROP
 -A INPUT -s 84.32.0.0/15 -j DROP
 -A INPUT -s 84.34.0.0/15 -j DROP
@@ -8578,6 +8833,7 @@
 -A INPUT -s 86.12.0.0/15 -j DROP
 -A INPUT -s 86.120.0.0/13 -j DROP
 -A INPUT -s 86.128.0.0/10 -j DROP
+-A INPUT -s 86.192.92.72/32 -j DROP
 -A INPUT -s 86.223.103.189/32 -j DROP
 #-A INPUT -s 86.239.3.46/32 -j DROP
 -A INPUT -s 86.246.116.147/32 -j DROP
@@ -8594,6 +8850,7 @@
 -A INPUT -s 86.58.0.0/15 -j DROP
 -A INPUT -s 86.60.0.0/15 -j DROP
 -A INPUT -s 86.62.0.0/16 -j DROP
+-A INPUT -s 86.74.184.45/32 -j DROP
 -A INPUT -s 86.80.0.0/12 -j DROP
 -A INPUT -s 86.96.0.0/14 -j DROP
 -A INPUT -s 87.0.0.0/11 -j DROP
@@ -8609,6 +8866,7 @@
 -A INPUT -s 87.118.0.0/15 -j DROP
 -A INPUT -s 87.122.0.0/15 -j DROP
 -A INPUT -s 87.124.0.0/15 -j DROP
+-A INPUT -s 87.126.0.0/15 -j DROP
 -A INPUT -s 87.128.0.0/10 -j DROP
 -A INPUT -s 87.192.0.0/15 -j DROP
 -A INPUT -s 87.194.0.0/15 -j DROP
@@ -8681,17 +8939,31 @@
 -A INPUT -s 88.154.0.0/15 -j DROP
 -A INPUT -s 88.156.0.0/15 -j DROP
 -A INPUT -s 88.158.0.0/15 -j DROP
+-A INPUT -s 88.162.135.210/32 -j DROP
+-A INPUT -s 88.164.110.45/32 -j DROP
+-A INPUT -s 88.164.252.86/32 -j DROP
 -A INPUT -s 88.165.44.25/32 -j DROP
+-A INPUT -s 88.166.58.169/32 -j DROP
 -A INPUT -s 88.167.123.203/32 -j DROP
+-A INPUT -s 88.167.7.73/32 -j DROP
+-A INPUT -s 88.168.185.190/32 -j DROP
+-A INPUT -s 88.169.137.188/32 -j DROP
 -A INPUT -s 88.169.39.153/32 -j DROP
+-A INPUT -s 88.171.91.219/32 -j DROP
+-A INPUT -s 88.172.112.190/32 -j DROP
 -A INPUT -s 88.173.147.124/32 -j DROP
 -A INPUT -s 88.175.54.104/32 -j DROP
+-A INPUT -s 88.175.74.120/32 -j DROP
 -A INPUT -s 88.181.185.79/32 -j DROP
+-A INPUT -s 88.182.229.137/32 -j DROP
 -A INPUT -s 88.184.164.106/32 -j DROP
 -A INPUT -s 88.185.79.168/32 -j DROP
 -A INPUT -s 88.185.79.190/32 -j DROP
+-A INPUT -s 88.186.1.174/32 -j DROP
+-A INPUT -s 88.186.141.141/32 -j DROP
 -A INPUT -s 88.187.175.110/32 -j DROP
 -A INPUT -s 88.190.125.233/32 -j DROP
+-A INPUT -s 88.190.197.188/32 -j DROP
 -A INPUT -s 88.192.0.0/14 -j DROP
 -A INPUT -s 88.196.0.0/15 -j DROP
 -A INPUT -s 88.198.0.0/15 -j DROP
@@ -8703,17 +8975,16 @@
 -A INPUT -s 88.210.0.0/15 -j DROP
 -A INPUT -s 88.214.0.0/15 -j DROP
 -A INPUT -s 88.216.0.0/15 -j DROP
--A INPUT -s 88.220.0.0/16 -j DROP
--A INPUT -s 88.222.149.143/32 -j DROP
--A INPUT -s 88.223.19.0/24 -j DROP
+-A INPUT -s 88.220.0.0/15 -j DROP
+-A INPUT -s 88.222.0.0/16 -j DROP
 -A INPUT -s 88.224.0.0/11 -j DROP
--A INPUT -s 88.242.0.0/15 -j DROP
--A INPUT -s 88.244.0.0/15 -j DROP
--A INPUT -s 88.246.0.0/15 -j DROP
--A INPUT -s 88.248.0.0/15 -j DROP
--A INPUT -s 88.250.0.0/15 -j DROP
--A INPUT -s 88.252.0.0/15 -j DROP
--A INPUT -s 88.254.0.0/15 -j DROP
+#-A INPUT -s 88.242.0.0/15 -j DROP
+#-A INPUT -s 88.244.0.0/15 -j DROP
+#-A INPUT -s 88.246.0.0/15 -j DROP
+#-A INPUT -s 88.248.0.0/15 -j DROP
+#-A INPUT -s 88.250.0.0/15 -j DROP
+#-A INPUT -s 88.252.0.0/15 -j DROP
+#-A INPUT -s 88.254.0.0/15 -j DROP
 -A INPUT -s 88.32.0.0/11 -j DROP
 -A INPUT -s 88.64.0.0/12 -j DROP
 -A INPUT -s 88.80.0.0/15 -j DROP
@@ -8830,17 +9101,24 @@
 -A INPUT -s 89.64.0.0/12 -j DROP
 -A INPUT -s 89.8.0.0/14 -j DROP
 -A INPUT -s 89.83.127.152/32 -j DROP
+-A INPUT -s 89.83.29.206/32 -j DROP
 -A INPUT -s 89.85.68.123/32 -j DROP
 -A INPUT -s 89.86.88.235/32 -j DROP
+-A INPUT -s 89.92.188.233/32 -j DROP
 -A INPUT -s 89.92.200.92/32 -j DROP
+-A INPUT -s 89.92.244.64/32 -j DROP
 -A INPUT -s 89.96.0.0/15 -j DROP
 -A INPUT -s 89.98.0.0/15 -j DROP
 #-A INPUT -s 90.0.0.0/9 -j DROP
+-A INPUT -s 90.113.17.119/32 -j DROP
+-A INPUT -s 90.116.116.250/32 -j DROP
 -A INPUT -s 90.126.226.18/32 -j DROP
 -A INPUT -s 90.128.0.0/9 -j DROP
+-A INPUT -s 90.14.69.192/32 -j DROP
 -A INPUT -s 90.19.197.150/32 -j DROP
 -A INPUT -s 90.2.13.2/32 -j DROP
 -A INPUT -s 90.24.80.133/32 -j DROP
+-A INPUT -s 90.26.110.154/32 -j DROP
 -A INPUT -s 90.27.171.150/32 -j DROP
 #Bad user-agent used
 -A INPUT -s 90.3.241.21/32 -j DROP
@@ -8849,6 +9127,7 @@
 -A INPUT -s 90.47.235.55/32 -j DROP
 -A INPUT -s 90.49.254.79/32 -j DROP
 -A INPUT -s 90.50.32.4/32 -j DROP
+-A INPUT -s 90.59.97.43/32 -j DROP
 -A INPUT -s 90.63.133.101/32 -j DROP
 -A INPUT -s 90.64.0.0/16 -j DROP
 -A INPUT -s 90.68.0.0/15 -j DROP
@@ -8860,6 +9139,7 @@
 -A INPUT -s 90.85.238.145/32 -j DROP
 #-A INPUT -s 90.89.0.0/16 -j DROP
 -A INPUT -s 90.94.0.0/15 -j DROP
+-A INPUT -s 90.96.0.0/16 -j DROP
 -A INPUT -s 90.98.0.0/15 -j DROP
 -A INPUT -s 91.0.0.0/10 -j DROP
 -A INPUT -s 91.100.0.0/15 -j DROP
@@ -8941,8 +9221,10 @@
 -A INPUT -s 92.122.0.0/15 -j DROP
 -A INPUT -s 92.124.0.0/14 -j DROP
 -A INPUT -s 92.126.0.0/15 -j DROP
+-A INPUT -s 92.129.209.39/32 -j DROP
 -A INPUT -s 92.151.246.204/32 -j DROP
 -A INPUT -s 92.154.0.0/17 -j DROP
+-A INPUT -s 92.157.123.43/32 -j DROP
 -A INPUT -s 92.172.0.0/16 -j DROP
 -A INPUT -s 92.176.0.0/15 -j DROP
 -A INPUT -s 92.178.0.0/16 -j DROP
@@ -8992,6 +9274,7 @@
 -A INPUT -s 92.72.0.0/13 -j DROP
 -A INPUT -s 92.80.0.0/13 -j DROP
 -A INPUT -s 92.96.0.0/14 -j DROP
+-A INPUT -s 93.1.107.89/32 -j DROP
 -A INPUT -s 93.100.0.0/15 -j DROP
 -A INPUT -s 93.102.0.0/15 -j DROP
 -A INPUT -s 93.104.0.0/14 -j DROP
@@ -9001,6 +9284,7 @@
 -A INPUT -s 93.116.0.0/15 -j DROP
 -A INPUT -s 93.119.0.0/16 -j DROP
 -A INPUT -s 93.120.0.0/15 -j DROP
+-A INPUT -s 93.122.0.0/16 -j DROP
 -A INPUT -s 93.124.0.0/15 -j DROP
 #Serverd+
 -A INPUT -s 93.126.0.0/15 -j DROP
@@ -9028,7 +9312,9 @@
 -A INPUT -s 93.22.21.33/32 -j DROP
 -A INPUT -s 93.24.192.141/32 -j DROP
 -A INPUT -s 93.27.160.66/32 -j DROP
+-A INPUT -s 93.3.205.7/32 -j DROP
 -A INPUT -s 93.32.0.0/11 -j DROP
+-A INPUT -s 93.4.7.137/32 -j DROP
 -A INPUT -s 93.64.0.0/13 -j DROP
 -A INPUT -s 93.72.0.0/13 -j DROP
 -A INPUT -s 93.80.0.0/15 -j DROP
@@ -9099,6 +9385,7 @@
 -A INPUT -s 94.232.0.0/15 -j DROP
 -A INPUT -s 94.234.0.0/15 -j DROP
 -A INPUT -s 94.236.0.0/15 -j DROP
+-A INPUT -s 94.239.255.34/32 -j DROP
 -A INPUT -s 94.240.0.0/15 -j DROP
 -A INPUT -s 94.242.0.0/15 -j DROP
 -A INPUT -s 94.244.0.0/15 -j DROP
@@ -9161,6 +9448,7 @@
 -A INPUT -s 95.132.0.0/14 -j DROP
 -A INPUT -s 95.137.0.0/16 -j DROP
 -A INPUT -s 95.138.128.0/17 -j DROP
+-A INPUT -s 95.138.69.172/32 -j DROP
 -A INPUT -s 95.139.0.0/16 -j DROP
 -A INPUT -s 95.14.0.0/15 -j DROP
 -A INPUT -s 95.144.0.0/13 -j DROP
@@ -9175,7 +9463,6 @@
 -A INPUT -s 95.166.0.0/15 -j DROP
 -A INPUT -s 95.169.0.0/16 -j DROP
 -A INPUT -s 95.170.31.0/24 -j DROP
--A INPUT -s 95.175.0.0/17 -j DROP
 -A INPUT -s 95.176.128.0/17 -j DROP
 -A INPUT -s 95.177.0.0/16 -j DROP
 -A INPUT -s 95.179.0.0/16 -j DROP
@@ -9268,31 +9555,4 @@
 #Google Playstore+Synchronization
 -A OUTPUT -p tcp -m state --state NEW -m tcp --dport 5222 -j DROP
 -A OUTPUT -p tcp -m state --state NEW -m tcp --dport 5228 -j DROP
-
-#DNS
-#-A INPUT -p udp -m state --state NEW -m udp --sport 53 -s 62.210.16.7 -j DROP
-#-A INPUT -p udp -m state --state NEW -m udp --sport 53 -s 62.210.16.6 -j DROP
-
--A INPUT -j LOG --log-prefix "IPTABLES :" --log-level info -m state --state NEW -p tcp -m tcp -m multiport --dports 22,23,25,135,139,445,465,587,3389,5985,5986,10000,59804
--A INPUT -j LOG --log-prefix "IPTABLES :" --log-level info -m state --state NEW -p tcp -m tcp -m multiport --dports 1433,1521,3306,5432
--A INPUT -j LOG --log-prefix "IPTABLES :" --log-level info -m state --state NEW -p udp -m udp -m multiport --dports 53,135,137,138,443,445,1434,4500,6771
-
-#Ports
--A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j DROP
--A INPUT -p tcp -m state --state NEW -m tcp --dport 23 -j DROP
--A OUTPUT -p tcp -m state --state NEW -m tcp --dport 53 -j DROP
-#-A INPUT -p tcp -m state --state NEW -m tcp --dport 25 -j DROP
-#-A INPUT -p tcp -m state --state NEW -m tcp --dport 445 -j DROP
-#-A INPUT -p udp -m state --state NEW -m udp --dport 445 -j DROP
--A INPUT -p tcp -m state --state NEW -m tcp --dport 135 -j DROP
--A INPUT -p tcp -m state --state NEW -m tcp --dport 139 -j DROP
--A INPUT -p udp -m state --state NEW -m udp --dport 137 -j DROP
--A INPUT -p udp -m state --state NEW -m udp --dport 138 -j DROP
--A INPUT -p udp -m state --state NEW -m udp --dport 1900 -j DROP
--A INPUT -p tcp -m state --state NEW -m tcp --dport 3389 -j DROP
--A INPUT -p udp -m state --state NEW -m udp --dport 5353 -j DROP
--A INPUT -p udp -m state --state NEW -m udp --dport 5355 -j DROP
--A INPUT -p tcp -m state --state NEW -m tcp --dport 5985 -j DROP
--A INPUT -p tcp -m state --state NEW -m tcp --dport 5986 -j DROP
--A INPUT -p tcp -m state --state NEW -m tcp --dport 10000 -j DROP
 
