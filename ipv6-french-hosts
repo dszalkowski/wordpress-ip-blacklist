@@ -1,0 +1,23 @@
+IPv6  Reports(1)  Tor  Country  Hostname
+2001:861:3503:6fb0:78da:1154:f4da:c1c2  0       false   "FR"
+2001:861:8951:d280:b5f8:d5ed:1093:c1ff  0       false   "FR"
+2001:861:8c87:67f0:b4fa:8da:5c86:f60e   0       false   "FR"
+2001:861:8d40:6850:dbf5:1023:233:e63e   0       false   "FR"
+2a00:7ee0:9:3:42::1     0       false   "FR"
+2a00:7ee0:9:3:51::1     0       false   "FR"
+2a01:cb05:7ca:4f00:9023:f337:f5c2:85f4  0       false   "FR"    2a01cb0507ca4f009023f337f5c285f4.ipv6.abo.wanadoo.fr.
+2a01:cb08:835f:6a00:de9:3626:d1c9:3965  0       false   "FR"    2a01cb08835f6a000de93626d1c93965.ipv6.abo.wanadoo.fr.
+2a01:cb18:1e:400:fb36:ccd1:e04f:87dc    0       false   "FR"    2a01cb18001e0400fb36ccd1e04f87dc.ipv6.abo.wanadoo.fr.
+2a01:cb18:32:9100:da46:7808:1b5:a49d    0       false   "FR"    2a01cb1800329100da46780801b5a49d.ipv6.abo.wanadoo.fr.
+2a01:e0a:8a1:f490:61ae:abb7:6125:2b68   0       false   "FR"
+2a01:e0a:b05:8180:9641:b528:5b95:60b9   0       false   "FR"
+2a01:e11:5410:2430:b9a8:4ffd:4519:752d  0       false   "IT"
+2a01:e34:ec06:87d0:223:24ff:fe2f:74bc   0       false   "FR"
+2a02:8428:662:b201:2cfe:57b1:e94c:5b02  0       false   "FR"    2a02-8428-0662-b201-2cfe-57b1-e94c-5b02.rev.sfr.net.
+2a02:842a:8649:9f01:d8f7:65e2:dc39:d143 0       false   "FR"    2a02-842a-8649-9f01-d8f7-65e2-dc39-d143.rev.sfr.net.
+2a0b:9380:425:2::11     0       false   "FR"
+2a0b:9380:425:2::12     0       false   "FR"
+2a0b:9380:425:2::13     0       false   "FR"
+2a0d:e487:5ce:6439:1d85:a701:ad8b:7c3e  2       false   "FR"
+
+(1) AbuseIPDB reports number
